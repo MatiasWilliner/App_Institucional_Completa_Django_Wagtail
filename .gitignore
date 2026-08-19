@@ -1,0 +1,78 @@
+# Entorno virtual (ajusta si usas otro nombre o ubicación)
+venv/
+ENV/
+env/
+
+# Archivos de configuración de entorno
+.env
+*.env
+.env.*
+
+# Archivos y directorios de Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+
+# Archivos de base de datos SQLite (si los hay)
+*.sqlite3
+
+# Archivos de logs
+*.log
+*.pot
+*.mo
+
+# Archivos de configuración específicos del sistema
+.DS_Store
+*.swp
+*.swo
+*.bak
+
+# Archivos de compilación / cache
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Archivos temporales y de cobertura
+htmlcov/
+.coverage
+.coverage.*
+.pytest_cache/
+.cache/
+
+# Archivos de media y estáticos recopilados
+staticfiles/
+media/
+
+# Archivos creados por editores
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Configuración de Gunicorn opcional
+gunicorn.pid
+
+# Archivos de configuración de sistema
+*.pem
+*.crt
+*.key
+
+# Archivos de migraciones
+**/migrations/*.py
+**/migrations/*.pyc
+!**/migrations/__init__.py
+
+
+Contenido/
