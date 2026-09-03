@@ -20,10 +20,26 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # Aplicaciones propias
     'app_contacto',
     'app_general',
     'app_novedades',
     'app_trabajo',
+    # Wagtail
+    "wagtail.contrib.forms",
+    "wagtail.contrib.redirects",
+    "wagtail.embeds",
+    "wagtail.sites",
+    "wagtail.users",
+    "wagtail.snippets",
+    "wagtail.documents",
+    "wagtail.images",
+    "wagtail.search",
+    "wagtail.admin",
+    "wagtail",
+    # Dependencias de Wagtail
+    "modelcluster",
+    "taggit",
 ]
 
 # Configuraciones varias
@@ -35,14 +51,19 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    # Wagtail
+    'wagtail.contrib.redirects.middleware.RedirectMiddleware',
 ]
 
 ROOT_URLCONF = 'AppCompletaEjemploCMS.urls'
+
+WAGTAIL_SITE_NAME = "Ejemplo CMS Institucional"
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
+            os.path.join(BASE_DIR, 'AppCompletaEjemploCMS', 'templates'),
             os.path.join(BASE_DIR, 'app_contacto', 'templates'),
             os.path.join(BASE_DIR, 'app_novedades', 'templates'),
             os.path.join(BASE_DIR, 'app_trabajo', 'templates'),
@@ -53,6 +74,10 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                # Context processor para poder usar las páginas personaizadas de wagtail
+                # en la navbar de la template base_principal.html, el cual se encuentra en 
+                # la carpeta del proyecto
+                #'AppCompletaEjemploCMS.context_processors.navegacion',
             ],
         },
     },
@@ -63,19 +88,19 @@ WSGI_APPLICATION = 'AppCompletaEjemploCMS.wsgi.application'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Configuración base de datos
-#DATABASES = {
-#    'default': {
-#        'ENGINE': 'django.db.backends.mysql',
-#        'NAME': config("DB_NAME"),
-#        'USER': config("DB_USER"),
-#        'PASSWORD': config("DB_PASSWORD"),
-#        'HOST': config("DB_HOST"),
-#        'PORT': config("DB_PORT", default="5432"),
-#        'OPTIONS':{
-#            'init_command':"SET sql_mode='STRICT_TRANS_TABLES'"
-#        },
-#    }
-#}
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': config("DB_NAME"),
+        'USER': config("DB_USER"),
+        'PASSWORD': config("DB_PASSWORD"),
+        'HOST': config("DB_HOST"),
+        'PORT': config("DB_PORT", default="5432"),
+        'OPTIONS':{
+            'init_command':"SET sql_mode='STRICT_TRANS_TABLES'"
+        },
+    }
+}
 
 # Validación de contraseñas
 AUTH_PASSWORD_VALIDATORS = [
@@ -102,6 +127,9 @@ USE_TZ = True
 # Archivos estáticos (CSS, JavaScript, Imágenes)
 STATIC_URL = 'static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'AppCompletaEjemploCMS', 'static'),
+]
 
 # Archivos cargados por el usaurio
 MEDIA_URL = 'media/'

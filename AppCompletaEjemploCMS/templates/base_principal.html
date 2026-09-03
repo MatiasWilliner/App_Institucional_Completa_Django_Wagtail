@@ -1,0 +1,183 @@
+{% load static %}
+
+{% load wagtailcore_tags %}
+
+<!DOCTYPE html>
+
+<html lang="es-ar">
+
+	<!-- Estilos y configuraciones generales
+	================================================== -->
+	<head>
+
+		<!-- Configuraciones generales -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<!-- Título de la pestaña -->
+		<title>{% block titulo%}Institución ejemplo{%endblock%}</title>
+		
+		<!-- Estilos -->
+		<link rel='stylesheet' href='{% static "css/bootstrap.min.css" %}'>
+		<link rel='stylesheet' href='{% static "css/estilos-personalizados.css" %}'/>
+		<link rel='stylesheet' href='{% static "css/fonts.css" %}'/>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+		
+		<!-- Estilos extra -->
+		{% block extracss%}
+		{% endblock%}
+
+		<!-- Ícono de la pestaña -->
+		<link rel="shortcut icon" href='{% static "images/logo.webp" %}' />
+		
+		<!-- Ícono del buscador -->
+		<link rel="icon" href='{% static "images/logo.webp" %}' />
+				
+	</head>
+
+	<!-- Cuerpo de la página
+	================================================== -->
+	<body>
+		
+		<!-- Encabezado y barra de nevegación -->
+		<header id="header" class="navbar navbar-inverse" role="banner">
+			<div class="container body_pie_navbar">
+				<div class="navbar-header">
+					<div class="navbar-container">
+						<!-- Logo y título -->
+						<div class="navbar-left">
+							<a href="{% url 'app_general:home' %}" class="lighter">
+								<img src='{% static "images/logo.webp"%}' alt="Logo" class="imagen_barra">
+							</a>
+						</div>
+						<!-- Botón responsive -->
+						<button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+					</div>
+				</div>
+				<!-- Barra de navegación expandida -->
+				<nav class="collapse navbar-collapse bs-navbar-collapse navbar-right" role="navigation">
+				<ul class="nav navbar-nav">
+					<li>
+					<a href="{% url 'app_general:home' %}">Inicio</a>
+					</li>
+					<li>
+					<a href="{% url 'app_general:sobre_nosotros' %}">Sobre Nosotros</a>
+					</li>
+					<!--<li class="dropdown">
+						<a href="" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Nuestro Trabajo</a>
+						<ul class="dropdown-menu">
+							<li><a href="">Áreas</a></li>
+							<li role="separator" class="divider"></li>
+							<li><a href="">Talleres</a></li>
+						</ul>
+					</li>-->
+					<li class="dropdown">
+						<a href="" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Novedades</a>
+						<ul class="dropdown-menu">
+							{% if pagina_noticias %}
+								<li>
+									<a href="{% pageurl pagina_noticias %}">Noticias</a>
+								</li>
+								<li role="separator" class="divider"></li>
+							{% endif %}
+							{% if pagina_eventos %}
+								<li>
+									<a href="{% pageurl pagina_eventos %}">Eventos</a>
+								</li>
+							{% endif %}
+						</ul>
+					</li>
+					<li>
+					<a href="{% url 'app_contacto:contacto' %}">Contacto</a>
+					</li>
+				</ul>
+				</nav>
+			</div>
+		</header>
+
+		<!-- Contenido variable -->
+		{% block content %}
+		{% endblock %}
+
+		<!-- Pie de página -->
+		<section id="credits" class="text-center body_pie_navbar">
+			<span class="social wow zoomIn">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-1">
+						</div>
+						<!-- Logo y título -->
+						<div class="col-md-3 img_pie">
+							<br>
+							<a href="{% url 'app_general:home' %}" class="lighter">
+								<div class="navbar-left">
+									<a href="home" class="lighter">
+										<img src='{% static "images/logo.webp"%}' loading="lazy" alt="Logo" class="imagen_barra">
+									</a>
+								</div>
+							</a>
+						</div>
+						<div class="col-md-1">
+						</div>
+						<!-- Navegación -->
+						<div class="col-md-2">
+							<br>
+							<div class="row centrar subtitulosDospie">
+								<a href="{% url 'app_general:home' %}">Inicio</a>
+							</div>
+							<div class="row centrar subtitulosDospie">
+								<a href="">Sobre nosotros</a>
+							</div>
+							<div class="row centrar subtitulosDospie">
+								<a href="">Áreas</a>
+							</div>
+							<div class="row centrar subtitulosDospie">
+								<a href="">Talleres</a>
+							</div>
+							<div class="row centrar subtitulosDospie">
+								<a href="">Noticias</a>
+							</div>
+							<div class="row centrar subtitulosDospie">
+								<a href="">Eventos</a>
+							</div>
+							<div class="row centrar subtitulosDospie">
+								<a href="">Contacto</a>
+							</div>
+						</div>
+						<div class="col-md-1">
+						</div>
+						<!-- Redes sociales -->
+						<div class="col-md-3">
+							<br>
+							<p class="texto-pie">Nuestras redes:</p>
+							<a href=""><i class="bi bi-facebook"></i></a>
+							<a href=""><i class="bi bi-youtube"></i></a>
+							<a href=""><i class="bi bi-instagram"></i></a>
+							<br>
+						</div>
+						<br>
+						<div class="col-md-1">
+						</div>
+					</div>
+				</div>
+			<!-- Texto Diócesis de Rafaela -->
+			</span><br/>
+			Copyright &copy; <a href="home">Institución Ejemplo</a>
+		</section>
+
+		<!-- Archivos .js -->
+		<script src='{% static "js/jquery.min.js" %}'></script>
+		<script src='{% static "js/bootstrap.min.js" %}'></script>
+
+		<!-- Archivos .js extra -->
+		{% block extrajs%}
+		{% endblock%}
+
+	</body>
+
+</html>
