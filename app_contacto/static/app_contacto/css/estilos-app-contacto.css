@@ -1,0 +1,246 @@
+/* ------------------------------------- Proyecto Ejemplo CMS------------------------------------- */
+
+
+
+
+/* Estilos y elementos generales página Contacto */
+
+/* Estilos recaptcha personalizado */
+.contenedor-validar{
+	display: flex;
+	justify-content: center;
+}
+.g-recaptcha {
+  transform: scale(0.9);
+  transform-origin: 0 0;
+}
+
+
+
+
+/*	------------------------------------- Responsive -------------------------------------	*/ 
+
+
+
+
+/* Correcciones para diferentes tamaños */
+
+@media (max-width:490px) {
+
+
+	/* Estilos página contacto */
+
+	/* -- estilos de card -- */
+	.card-titulo-contacto{
+		font-size: 16px;
+		font-family: "Roboto";
+		margin-left: 5%;
+	}
+	.form-label-contacto {
+		font-size: 16px;
+	}
+	.form-control {
+		width: 95%;
+		padding: 0px 0px;
+		font-size: 12px;
+	}
+	p.card-text-contacto {
+		font-size: 12px;
+		margin-left: 5%;
+	}
+	.mapa-contacto{
+		width: 100%;
+		height: 200px;
+	}
+	.g-recaptcha {
+		transform: scale(0.7);
+		transform-origin: 0 0;
+		margin-left: 45%;
+  	}
+
+
+}
+@media (min-width:491px) and (max-width:767px) {
+
+
+	/* Estilos página contacto */
+
+	/* -- estilos de card -- */
+	.card-titulo-contacto{
+		font-size: 18px;
+		font-family: "Roboto";
+		margin-left: 5%;
+	}
+	.form-label-contacto {
+		font-size: 18px;
+	}
+	.form-control {
+		width: 95%;
+		padding: 0px 0px;
+		font-size: 15px;
+	}
+	p.card-text-contacto {
+		font-size: 15px;
+		margin-left: 20%;
+	}
+	.mapa-contacto{
+		width: 100%;
+		height: 350px;
+	}
+
+
+}
+@media (min-width:768px) and (max-width:991px){
+
+
+	/* Estilos página contacto */
+
+	.ajuste-body-contacto{
+		margin-bottom: 5%;
+	}
+	p.card-text-contacto {
+    	margin-left: 40% !important;
+        margin-top: -5% !important;
+    }
+
+
+}
+@media (min-width:768px) and (max-width:1023px) {
+
+
+	/* Estilos página contacto */
+
+	/* -- estilos de card -- */
+	.card-titulo-contacto{
+		font-size: 20px;
+		font-family: "Roboto";
+		margin-left: 5%;
+	}
+	.form-label-contacto {
+		font-size: 20px;
+	}
+	.form-control {
+		width: 95%;
+		padding: 0px 0px;
+		font-size: 15px;
+	}
+	p.card-text-contacto {
+		font-size: 15px;
+		margin-left: 5%;
+	}
+	.mapa-contacto{
+		width: 100%;
+		height: 350px;
+	}
+
+
+}
+@media (min-width:1024px) and (max-width:1200px) {
+
+
+	/* Estilos página Contacto */
+
+	/* -- estilos de card -- */
+	.card-titulo-contacto{
+		font-size: 20px;
+		font-family: "Roboto";
+		margin-left: 5%;
+	}
+	.form-label-contacto {
+		font-size: 18px;
+		margin-left: -10%;
+	}
+	.form-control {
+		width: 100%;
+		padding: 0px 0px;
+		font-size: 14px;
+	}
+	p.card-text-contacto {
+		font-size: 14px;
+		margin-left: -10%;
+	}
+	.mapa-contacto{
+		width: 100%;
+		height: 400px;
+	}
+
+
+}
+@media (min-width:1200px) and (max-width:1999px) {
+
+
+	/* Estilos página Contacto */
+
+	/* -- estilos de card -- */
+	.card-titulo-contacto{
+		font-size: 24px;
+		font-family: "Roboto";
+		margin-left: 5%;
+	}
+	.form-label-contacto {
+		font-size: 24px;
+		margin-left: -5%;
+	}
+	.form-control {
+		width: 95%;
+		padding: 0px 0px;
+		font-size: 18px;
+	}
+	p.card-text-contacto {
+		font-size: 18px;
+		margin-left: -8%;
+		margin-bottom: 5%;
+	}
+	.mapa-contacto{
+		width: 100%;
+		height: 550px;
+	}
+
+
+}
+@media (min-width:2000px) {
+
+
+	/* Estilos página Contacto */
+
+	/* -- estilos de card -- */
+	.card-titulo-contacto{
+		font-size: 40px;
+		font-family: "Roboto";
+		margin-left: 5%;
+	}
+	.form-label-contacto {
+		font-size: 40px;
+		margin-left: -5%;
+		margin-top: 2%;
+	}
+	.form-control {
+		width: 95%;
+		height: max-content;
+		padding: 0px 0px;
+		font-size: 30px;
+		margin-top: 2%;
+	}
+	p.card-text-contacto {
+        font-size: 30px;
+        margin-bottom: 5%;
+        margin-left: 25%;
+        margin-top: -5%;
+	}
+	.mapa-contacto{
+		width: 100%;
+		height: 800px;
+	}
+	.g-recaptcha {
+		transform: scale(1.8);
+		transform-origin: 0 0;
+		margin-bottom: 5%;
+		margin-left:-20%
+	}
+	
+
+}
+
+
+
+

@@ -1,0 +1,164 @@
+{% extends "base_principal.html"%}
+{% load static %}
+
+{% block titulo%}Contacto{%endblock%}
+
+{% block extracss%}
+	<link rel="stylesheet" href="{% static 'app_contacto/css/estilos-app-contacto.css' %}">
+{% endblock%}
+
+{% block content %}
+
+
+<!-- Lugar donde se cargan las alertas
+================================================== -->
+{% if messages %}
+  {% for message in messages %}
+    <div class="alert {{ message.tags }} alert-dismissible" role="alert">
+      <button type="button" class="close" data-dismiss="alert">&times;</button>
+      {{ message }}
+    </div>
+  {% endfor %}
+{% endif %}
+
+
+<!-- Formulario y datos de contacto
+================================================== -->
+<section class="section">
+	<div class="container">
+		<div class="row">
+
+
+			<div class="col-md-8 container">
+				<div class="card">
+					<div class="card-header-contacto">
+					<p class="card-titulo-contacto">Formulario de consultas</p>
+					</div>
+					<div class="card-body ajuste-body-contacto">
+						<br>
+						<form method="post" action="enviar_mail_personalizado">
+                            {% csrf_token %}
+							<div class="row">
+								<div class="col-md-1"></div>
+								<div class="col-md-4">
+									<label for="InputName" class="form-label form-label-contacto">Nombre y apellido:</label>
+								</div>
+								<div class="col-md-6">
+									<input type="text" name="nombre_completo" class="form-control-contacto form-control" id="InputName">
+								</div>
+							  	<div class="col-md-1"></div>
+							</div>
+							<div class="row">
+								<div class="col-md-1"></div>
+								<div class="col-md-4">
+									<label for="InputTel" class="form-label form-label-contacto">Teléfono:</label>
+								</div>
+								<div class="col-md-6">
+									<input type="tel" name="telefono" class="form-control-contacto form-control" id="InputTel">
+								</div>
+							  	<div class="col-md-1"></div>
+							</div>
+							<div class="row">
+								<div class="col-md-1"></div>
+								<div class="col-md-4">
+									<label for="exampleInputEmail1" class="form-label form-label-contacto">Email: </label>
+								</div>
+								<div class="col-md-6">
+									<input type="email" name="email" class="form-control-contacto form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+								</div>
+								<div class="col-md-1"></div>	  
+							</div>
+							<div class="row">
+								<div class="col-md-1"></div>
+								<div class="col-md-4">
+									<label for="InputConsult" class="form-label form-label-contacto">Consulta: </label>
+								</div>
+								<div class="col-md-6">
+									<textarea rows="5" name="consulta" class="form-control-contacto form-control" id="InputConsult"></textarea>
+								</div>
+							  	<div class="col-md-1"></div>
+							</div>
+							<!-- Aquí va el reCAPTCHA -->
+							<br>
+							<div class="row">
+								<div class="col-md-3"></div>
+								<div class="col-md-6 contenedor-validar">
+  									<div class="g-recaptcha" data-sitekey={{RECAPTCHA_PUBLIC_KEY}}></div>
+								</div>
+								<div class="col-md-3"></div>
+							</div>
+							<div class="row">
+								<div class="col-md-3"></div>
+								<div class="col-md-6 centrar">
+									<br>
+									<button type="submit" class="btn btn-formulario">Enviar</button>
+								</div>
+							  	<div class="col-md-3"></div>
+								
+							</div>
+							<br>
+						</form>
+					</div>
+				</div>
+			</div>
+            
+            <br>
+			<div class="col-md-4 container">
+				<div class="card">
+					<div class="card-header-contacto">
+					<p class="card-titulo-contacto">Información de contacto</p>
+					</div>
+					<div class="card-body">
+						<div class="row">
+							<br>
+							<div class="col-md-1"></div>
+							<div class="col-md-10">
+								<p class="form-label-contacto">Tel/Cel: </p>
+								<p class="card-text-contacto">Acá va el telefono</p>
+								<p class="form-label-contacto">Email: </p>
+								<p class="card-text-contacto">Acá va el email</p>
+								<p class="form-label-contacto">Horarios:</p>
+								<p class="card-text-contacto">Acá van los horarios</p>
+							</div>
+							<div class="col-md-1"></div>
+							<br>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+		</div>
+	</div>
+	<br>
+</section>
+
+
+<!-- Mapa
+================================================== -->
+<section class="section">
+	<div class="container">
+		
+		<div class="row">
+			<div class="container">
+			<div class="card">
+				<div class="card-header-contacto">
+					<p class="card-titulo-contacto">Nuestras oficinas</p>
+				</div>
+				<div class="card-body">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d13642.935096400914!2d-61.501936949999994!3d-31.255792449999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2sar!4v1784859521834!5m2!1ses-419!2sar"
+                    class="mapa-contacto" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+				</div>
+			</div>
+		</div>
+		</div>
+	</div>
+	<br>
+</section>
+
+
+{% endblock %}
+
+{% block extrajs%}
+	<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+{% endblock %}
