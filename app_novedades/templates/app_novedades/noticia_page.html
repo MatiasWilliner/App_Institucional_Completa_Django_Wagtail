@@ -1,0 +1,44 @@
+{% extends "base_principal.html"%}
+{% load static %}
+
+{% block titulo%}Detalle noticia{%endblock%}
+
+{% block content %}
+
+{% load wagtailcore_tags wagtailimages_tags %}
+
+<!-- Detalle de la noticia seleccionada
+================================================== -->
+<section class="section">
+	<div class="container">
+		<!-- Contenido de la noticia -->
+		<div class="row">
+			{% if page.categoria %}
+				<p class="badge badge-detalle-noticias" style="background-color: {{page.categoria.color}};">{{page.categoria.descripcion}}</p>
+			{% else %}
+				<p class="badge badge-detalle-noticias">Sin categoria</p>
+			{% endif %}
+			<p class="titulo-noticia">{{page.title}}</p>
+			<p class="subtitulo-noticia">{{page.first_published_at}}</p>
+			<br>
+			<div class="centrar-imagen-noticia">
+				{% if page.imagen %}
+					{% image page.imagen width-2000 as imagen_noticia %}
+					<img class="imagen-detalle-noticia" src="{{imagen_noticia.url}}" alt="{{page.title}}">
+				{% endif %}
+			</div>
+			<br>
+			<div class="cuerpo-noticia">{{ page.descripcion|richtext|linebreaks }}</div>
+			<br>
+			{% if page.direccion %}
+				<div class="row centrar">
+                    <a href="{{page.direccion}}" class="btn btn-noticias">¡Más info!</a>
+                </div>
+				<br>
+			{% endif %}
+		</div>
+	</div>
+</section>
+
+
+{% endblock %}

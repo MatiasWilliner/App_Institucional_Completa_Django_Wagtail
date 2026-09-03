@@ -1,0 +1,351 @@
+{% extends "base_principal.html"%}
+{% load static %}
+
+{% block titulo %}Noticias{% endblock %}
+
+{% block extracss %}
+	<link rel="stylesheet" href="{% static 'app_novedades/css/estilos-app-novedades.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<!--Sirve para cargar las etiquetas y filtros especiales de Wagtail que vas a utilizar dentro del template.
+Y también permite trabajar con las imágenes administradas por Wagtail.-->
+{% load wagtailcore_tags wagtailimages_tags %}
+
+<!-- Últimas noticias
+================================================== -->
+<section class="section">
+	<nav class="navbar navbar-inverse nav-filtros">
+		<div class="container-fluid">
+			<!-- Título -->
+			<div class="navbar-header-filtros">
+				<h1 class="navbar-brand-noticias p-filtros navbar-brand-filtros">Últimas noticias</h1>
+			</div>
+		</div>
+	</nav>
+</section>
+<section class="section body-imagen-texto">
+	<div class="container">
+		<!-- Noticias de portada -->
+		<div class="row">
+			{% if noticias_destacadas|length == 3 %}
+				<div class="col-md-8">
+					<a href="{% pageurl noticias_destacadas.0 %}">
+						<div class="container-imagen-texto container-imagen-grande">
+							{% if noticias_destacadas.0.imagen %}
+								{% image noticias_destacadas.0.imagen width-400 as imagen_noticia %}
+								<img class="imagen-grande" src='{{imagen_noticia.url}}' alt="{{noticias_destacadas.0.title}}">
+							{% else %}
+								<img class="imagen-grande" src='{% static "app_novedades/images/imagen_default_fondo_oscuro.webp"%}' alt="{{noticias_destacadas.0.title}}">
+							{% endif %}
+							<div class="content-imagen-texto content-imagen-grande imagen-texto-principal ">
+								{% if noticias_destacadas.0.categoria %}
+									<p class="imagen-categoria" style="background-color: {{ noticias_destacadas.0.categoria.color }};">{{noticias_destacadas.0.categoria}}</p>
+								{% else %}
+									<p class="imagen-categoria">Sin categoría</p>
+								{% endif %}
+								{% if noticias_destacadas.0.title|length <= 100 %}
+									<p class="imagen-texto-grande">{{noticias_destacadas.0.title}}</p>
+								{% else %}
+									<p class="imagen-texto-grande">{{noticias_destacadas.0.title|slice:":100" }}...</p>
+								{% endif %}
+								{% if noticias_destacadas.0.descripcion|length <= 100 %}
+									<p class="imagen-texto-chica">{{ noticias_destacadas.0.descripcion|richtext}}</p>
+								{% else %}
+									<p class="imagen-texto-chica">{{ noticias_destacadas.0.descripcion|richtext|slice:":100" }}...</p>
+								{% endif %}
+							</div>
+						</div>
+					</a>
+				</div>
+				<div class="col-md-4">
+					<a href="{% pageurl noticias_destacadas.1 %}">
+						<div class="container-imagen-texto">
+							{% if noticias_destacadas.1.imagen %}
+								{% image noticias_destacadas.1.imagen width-400 as imagen_noticia %}
+								<img class="imagen-chica" src='{{imagen_noticia.url}}' alt="{{noticias_destacadas.1.title}}">
+							{% else %}
+								<img class="imagen-chica" src='{% static "app_novedades/images/imagen_default_fondo_oscuro.webp"%}' alt="{{noticias.1.title}}">
+							{% endif %}
+							<div class="content-imagen-texto">
+								{% if noticias_destacadas.1.categoria %}
+									<p class="imagen-categoria" style="background-color: {{ noticias_destacadas.1.categoria.color }};">{{noticias_destacadas.1.categoria}}</p>
+								{% else %}
+									<p class="imagen-categoria">Sin categoría</p>
+								{% endif %}
+								{% if noticias_destacadas.1.title|length <= 80 %}
+									<p class="imagen-texto-grande">{{noticias_destacadas.1.title}}</p>
+								{% else %}
+									<p class="imagen-texto-grande">{{noticias_destacadas.1.title|slice:":80" }}...</p>
+								{% endif %}
+							</div>
+						</div>
+					</a>
+					<br>
+					<a href="{% pageurl noticias_destacadas.2 %}">
+						<div class="container-imagen-texto">
+							{% if noticias_destacadas.2.imagen %}
+								{% image noticias_destacadas.2.imagen width-400 as imagen_noticia %}
+								<img class="imagen-chica" src='{{imagen_noticia.url}}' alt="{{noticias_destacadas.2.title}}">
+							{% else %}
+								<img class="imagen-chica" src='{% static "app_novedades/images/imagen_default_fondo_oscuro.webp"%}' alt="{{noticias_destacadas.2.title}}">
+							{% endif %}
+							<div class="content-imagen-texto">
+								{% if noticias_destacadas.2.categoria %}
+									<p class="imagen-categoria" style="background-color: {{ noticias_destacadas.2.categoria.color }};">{{noticias_destacadas.2.categoria}}</p>
+								{% else %}
+									<p class="imagen-categoria">Sin categoría</p>
+								{% endif %}
+								{% if noticias.2.title|length <= 80 %}
+									<p class="imagen-texto-grande">{{noticias_destacadas.2.title}}</p>
+								{% else %}
+									<p class="imagen-texto-grande">{{noticias_destacadas.2.title|slice:":80" }}...</p>
+								{% endif %}
+							</div>
+						</div>
+					</a>
+				</div>
+			{% elif noticias_destacadas|length == 2 %}
+				<div class="col-md-6">
+					<a href="{% pageurl noticias_destacadas.0 %}">
+						<div class="container-imagen-texto container-imagen-grande container-imagen-doble">
+							{% if noticias_destacadas.0.imagen %}
+								{% image noticias_destacadas.0.imagen width-400 as imagen_noticia %}
+								<img class="imagen-doble" src='{{ imagen_noticia.url }}' alt="{{noticias_destacadas.0.title}}">
+							{% else %}
+								<img class="imagen-doble" src='{% static "app_novedades/images/imagen_default_fondo_oscuro.webp"%}' alt="Imagen de la noticia">
+							{% endif %}
+							<div class="content-imagen-texto imagen-doble-texto">
+								{% if noticias_destacadas.0.categoria %}
+									<p class="imagen-categoria" style="background-color: {{ noticias_destacadas.0.categoria.color }};">{{noticias_destacadas.0.categoria}}</p>
+								{% else %}
+									<p class="imagen-categoria">Sin categoría</p>
+								{% endif %}
+								{% if noticias_destacadas.0.title|length <= 100 %}
+									<p class="imagen-texto-grande-doble">{{noticias_destacadas.0.title}}</p>
+								{% else %}
+									<p class="imagen-texto-grande-doble">{{noticias_destacadas.0.title|slice:":100" }}...</p>
+								{% endif %}
+								{% if noticias_destacadas.0.descripcion|length <= 100 %}
+									<p class="imagen-texto-chica-doble">{{ noticias_destacadas.0.descripcion|richtext }}</p>
+								{% else %}
+									<p class="imagen-texto-chica-doble">{{ noticias_destacadas.0.descripcion|richtext|slice:":100" }}...</p>
+								{% endif %}
+							</div>
+						</div>
+					</a>
+				</div>
+				<div class="col-md-6">
+					<a href="{% pageurl noticias_destacadas.1 %}">
+						<div class="container-imagen-texto container-imagen-grande container-imagen-doble">
+							{% if noticias_destacadas.1.imagen %}
+								{% image noticias_destacadas.1.imagen width-400 as imagen_noticia %}
+								<img class="imagen-doble" src='{{imagen_noticia.url}}' alt="{{noticias_destacadas.1.title}}">
+							{% else %}
+								<img class="imagen-doble" src='{% static "app_principal/images/imagen_default_fondo_oscuro.webp"%}' alt="Imagen de la noticia">
+							{% endif %}
+							<div class="content-imagen-texto imagen-doble-texto">
+								{% if noticias_destacadas.1.categoria %}
+									<p class="imagen-categoria" style="background-color: {{ noticias_destacadas.1.categoria.color }};">{{noticias_destacadas.1.categoria}}</p>
+								{% else %}
+									<p class="imagen-categoria">Sin categoría</p>
+								{% endif %}
+								{% if noticias_destacadas.1.title|length <= 100 %}
+									<p class="imagen-texto-grande-doble">{{noticias_destacadas.1.title}}</p>
+								{% else %}
+									<p class="imagen-texto-grande-doble">{{noticias_destacadas.1.title|slice:":100" }}...</p>
+								{% endif %}
+								{% if noticias_destacadas.1.descripcion|length <= 100 %}
+									<p class="imagen-texto-chica-doble">{{noticias_destacadas.1.descripcion|richtext}}</p>
+								{% else %}
+									<p class="imagen-texto-chica-doble">{{ noticias_destacadas.1.descripcion|richtext|slice:":100" }}...</p>
+								{% endif %}
+							</div>
+						</div>
+					</a>
+				</div>
+			{% elif noticias_destacadas|length == 1 %}
+				<div class="col-md-12">
+					<a href="{% pageurl noticias_destacadas.0 %}">
+						<div class="container-imagen-texto container-imagen-grande container-imagen-simple">
+							{% if noticias_destacadas.0.imagen %}
+								<img class="imagen-simple" src='{{noticias.0.imagen.url}}' alt="{{noticias_destacadas.0.title}}">
+							{% else %}
+								<img class="imagen-simple" src='{% static "app_novedades/images/imagen_default_fondo_oscuro.webp"%}' alt="{{noticias_destacadas.0.title}}">
+							{% endif %}
+							<div class="content-imagen-texto imagen-simple-texto">
+								{% if noticias_destacadas.0.categoria %}
+									<p class="imagen-categoria" style="background-color: {{ noticias_destacadas.0.categoria.color }};">{{noticias_destacadas.0.categoria}}</p>
+								{% else %}
+									<p class="imagen-categoria">Sin categoría</p>
+								{% endif %}
+								{% if noticias_destacadas.0.title|length <= 100 %}
+									<p class="imagen-texto-grande">{{noticias_destacadas.0.title}}</p>
+								{% else %}
+									<p class="imagen-texto-grande">{{noticias_destacadas.0.title|slice:":100" }}...</p>
+								{% endif %}
+								{% if noticias_destacadas.0.descripcion|length <= 100 %}
+									<p class="imagen-texto-chica-doble">{{ noticias_destacadas.0.descripcion|richtext }}...</p>
+								{% else %}
+									<p class="imagen-texto-chica-doble">{{ noticias_destacadas.0.descripcion|richtext|slice:":100" }}...</p>
+								{% endif %}
+							</div>
+						</div>
+					</a>
+				</div>
+			{% else %}
+				<div class="col-md-12">
+					<h1 class="centrar">No hay noticias cargadas</h1>
+					<br>
+					<div class="centrar">
+                        <a href="home">
+                            <img class="img-home" src='{% static "app_novedades/images/imagen_logo.webp"%}' alt=" Logo Institución Ejemplo">
+                        </a>
+                    </div>
+				</div>
+			{% endif %}
+		</div>
+	</div>
+</section>
+
+
+<!-- Más noticias
+================================================== -->
+<section class="section">
+	<nav class="navbar navbar-inverse nav-filtros">
+		<div class="container-fluid">
+			<div class="navbar-header-filtros">
+				<h1 class="navbar-brand-noticias p-filtros navbar-brand-filtros">Más noticias</h1>
+			</div>
+		</div>
+	</nav>
+</section>
+<section class="section">
+	<!-- Filtros -->
+	<nav class="navbar navbar-filtros">
+		<div class="container-fluid">
+			<div class="row">
+				<form method="get">
+					<div class="col-md-1">
+					</div>
+					<div class="col-md-3 centrar">
+						<p class="navbar-brand p-filtros navbar-brand-filtros" id="filtro-categorias-texto">Categorias: </p>
+						<select id="filtro-categorias" class="form-select-categoria navbar-brand p-filtros navbar-brand-filtros" aria-label="Default select example" name="categoria">
+							<option value="">
+								Todas las categorías
+							</option>
+							{% for categoria in categorias %}
+								<option
+									value="{{ categoria.id }}"
+									{% if request.GET.categoria == categoria.id|stringformat:"s" %}
+										selected
+									{% endif %}
+								>
+									{{ categoria.descripcion }}
+								</option>
+							{% endfor %}
+						</select>
+					</div>
+					<div class="col-md-3 centrar">
+						<p class="navbar-brand p-filtros navbar-brand-filtros" id="fecha-desde-texto">Fecha desde: 
+							<input type="date" id="fecha_desde" name="fecha_desde" value="{{ request.GET.fecha_desde }}">
+						</p>
+					</div>
+					<div class="col-md-3 centrar">
+						<p class="navbar-brand p-filtros navbar-brand-filtros" id="fecha-hasta-texto">Fecha hasta: 
+							<input type="date" id="fecha_hasta" name="fecha_hasta" value="{{ request.GET.fecha_hasta }}">
+						</p>
+					</div>
+					<div class="col-md-1 centrar">
+						<button type="submit" class="btn btn-noticias filtros">Filtrar</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</nav>
+</section>
+
+<!-- Cards del resto de noticias -->
+<div id="contenedor-noticias" class="container">
+
+	{% for noticia in noticias %}
+
+		<div class="container card-body-borde-noticias">
+			<div class="card">
+				<div class="row">
+					<div class="col-md-4 centrar">
+						{% if noticia.imagen %}
+							{% image noticia.imagen width-400 as imagen_noticia %}
+							<img src="{{ imagen_noticia.url }}" class="card-imagen-noticias" alt="{{ noticia.title }}">
+						{% endif %}
+					</div>
+					<div class="col-md-8">
+						<div class="row">
+							<div class="col-md-12">
+								<p class="badge badge-noticias" style="background-color: {{noticia.categoria.color}};">
+									{{noticia.categoria}}
+								</p>
+								<h3 class="card-title-noticias">{{noticia.title}}</h3>
+								<p class="card-text-noticias">{{ noticia.descripcion|richtext }}</p>
+							</div>
+						</div>
+						<div class="row centrar">
+							<div class="col-md-6">
+							</div>
+							<div class="col-md-6">
+								<a href="{% pageurl noticia %}" class="btn btn-noticias">Ver más...</a>
+							</div>  
+						</div>
+					</div>
+				</div>
+			</div>
+		</div><br>
+
+	{% empty %}
+
+		<p class="text-center">No hay noticias para este filtro.</p>
+
+	{% endfor %}
+
+</div>
+
+<!-- Paginación -->
+<div class="row">
+	<div class="col-md-4">
+	</div>
+	<div class="col-md-4">
+		<div class="mejora-paginacion">
+			{% if noticias.has_other_pages %}
+				<nav>
+					{% if noticias.has_previous %}
+						<a class="btn btn-noticias" href="?page={{ noticias.previous_page_number }}&categoria={{ request.GET.categoria }}&fecha_desde={{ request.GET.fecha_desde }}&fecha_hasta={{ request.GET.fecha_hasta }}">
+							Anterior
+						</a>
+					{% else %}
+						<a class="btn btn-noticias disabled" href="#">
+							Anterior
+						</a>
+					{% endif %}
+					<span>
+						<button id="pagina-actual" type="button" class="btn btn-noticias disabled">{{ noticias.number }}</button>
+					</span>
+					{% if noticias.has_next %}
+						<a class="btn btn-noticias" href="?page={{ noticias.next_page_number }}&categoria={{ request.GET.categoria }}&fecha_desde={{ request.GET.fecha_desde }}&fecha_hasta={{ request.GET.fecha_hasta }}">
+							Siguiente
+						</a>
+					{% else %}
+						<a class="btn btn-noticias disabled" href="#">
+							Siguiente
+						</a>
+					{% endif %}
+				</nav>
+			{% endif %}
+		</div>
+	</div>
+	<div class="col-md-4">
+	</div>
+</div>
+
+
+{% endblock %}

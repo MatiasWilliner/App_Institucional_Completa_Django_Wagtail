@@ -1,0 +1,181 @@
+{% extends "base_principal.html"%}
+{% load static %}
+
+{% block titulo %}Eventos{% endblock %}
+
+{% block extracss %}
+	<link rel="stylesheet" href="{% static 'app_novedades/css/fullcalendar.min.css' %}">
+	<link rel="stylesheet" href="{% static 'app_novedades/css/estilos-app-novedades.css' %}">
+	<!--<link rel="stylesheet" href="{% static 'app_novedades/css/fullcalendar.min.css' %}">-->
+{% endblock %}
+
+{% block content %}
+
+<!--Sirve para cargar las etiquetas y filtros especiales de Wagtail que vas a utilizar dentro del template.
+	Y también permite trabajar con las imágenes administradas por Wagtail.-->
+{% load wagtailcore_tags wagtailimages_tags %}
+
+<!-- Título y filtros
+================================================== -->
+<section class="section">
+	<nav class="navbar navbar-inverse nav-filtros">
+		<div class="container-fluid">
+			<div class="navbar-header-filtros">
+				<h1 class="navbar-brand-noticias p-filtros navbar-brand-filtros">Eventos</h1>
+			</div>
+		</div>
+	</nav>
+</section>
+<section class="section">
+	<!-- Filtros -->
+	<nav class="navbar navbar-filtros">
+		<div class="container-fluid">
+			<div class="row">
+				<form method="get">
+					<div class="col-md-1">
+					</div>
+					<div class="col-md-3 centrar">
+						<p class="navbar-brand p-filtros navbar-brand-filtros" id="filtro-categorias-texto">Categorias: </p>
+						<select id="filtro-categorias" class="form-select-categoria navbar-brand p-filtros navbar-brand-filtros" aria-label="Default select example" name="categoria">
+							<option value="">
+								Todas las categorías
+							</option>
+							{% for categoria in categorias %}
+								<option
+									value="{{ categoria.id }}"
+									{% if request.GET.categoria == categoria.id|stringformat:"s" %}
+										selected
+									{% endif %}
+								>
+									{{ categoria.descripcion }}
+								</option>
+							{% endfor %}
+						</select>
+					</div>
+					<div class="col-md-3 centrar">
+						<p class="navbar-brand p-filtros navbar-brand-filtros" id="fecha-desde-texto">Fecha desde: 
+							<input type="date" id="fecha_desde" name="fecha_desde" value="{{ request.GET.fecha_desde }}">
+						</p>
+					</div>
+					<div class="col-md-3 centrar">
+						<p class="navbar-brand p-filtros navbar-brand-filtros" id="fecha-hasta-texto">Fecha hasta: 
+							<input type="date" id="fecha_hasta" name="fecha_hasta" value="{{ request.GET.fecha_hasta }}">
+						</p>
+					</div>
+					<div class="col-md-1 centrar">
+						<button type="submit" class="btn btn-noticias filtros">Filtrar</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</nav>
+</section>
+
+<!-- Eventos
+================================================== -->
+<!-- Cards de eventos -->
+<div id="contenedor-eventos" class="container">
+
+	{% for evento in eventos %}
+	
+	<div class="container card-body-borde-noticias">
+		<div class="card">
+			<div class="row">
+				<div class="col-md-4 centrar">
+					{% if evento.imagen %}
+						{% image evento.imagen width-400 as imagen_evento %}
+							<img src="{{imagen_evento.url}}" class="imagen-eventos centrar-imagen" alt="{{evento.title}}">
+					{% endif %}	
+				</div>
+				<div class="col-md-8">
+					<p class="badge badge-noticias" style="background-color: {{evento.categoria.color}};">{{evento.categoria}}</p>
+					<h3 class="card-title-noticias">{{evento.title}}</h3>
+					<br>
+					<div class="row centrar">
+						<div class="col-md-1"></div>
+						<div class="col-md-3">
+							<p class="card-item-eventos">Fecha: {{evento.fecha}} </p>
+						</div>
+						<div class="col-md-3">
+							<p class="card-item-eventos">Hora: {{evento.hora}} </p>
+						</div>
+						<div class="col-md-4">
+							<p class="card-item-eventos">Modalidad: {{evento.modalidad}} </p>
+						</div>
+						<div class="col-md-1"></div>
+					</div>
+					<br>
+					<p class="card-item-eventos">Ubicación: {{evento.lugar}}</p>
+					<p class="card-text-noticias">{{evento.descripcion|richtext}}</p>
+					{% if evento.formulario %}
+						<div class="row centrar">
+							<a href="{{evento.formulario}}" class="btn btn-noticias">¡Inscribite!</a>
+						</div>
+					{% endif %}
+				</div>
+			</div>
+		</div>
+	</div><br>
+
+	{% empty %}
+		
+	<p class="text-center">No hay eventos para este filtro.</p>
+	
+	{% endfor %}
+
+</div>
+
+<!-- Paginación -->
+<div class="row">
+	<div class="col-md-4">
+	</div>
+	<div class="col-md-4">
+		<div class="mejora-paginacion">
+			{% if eventos.has_other_pages %}
+				<nav>
+					{% if eventos.has_previous %}
+						<a class="btn btn-noticias" href="?page={{ eventos.previous_page_number }}&categoria={{ request.GET.categoria }}&fecha_desde={{ request.GET.fecha_desde }}&fecha_hasta={{ request.GET.fecha_hasta }}">
+							Anterior
+						</a>
+					{% else %}
+						<a class="btn btn-noticias disabled" href="#">
+							Anterior
+						</a>
+					{% endif %}
+					<span>
+						<button id="pagina-actual" type="button" class="btn btn-noticias disabled">{{ noticias.number }}</button>
+					</span>
+					{% if eventos.has_next %}
+						<a class="btn btn-noticias" href="?page={{ eventos.next_page_number }}&categoria={{ request.GET.categoria }}&fecha_desde={{ request.GET.fecha_desde }}&fecha_hasta={{ request.GET.fecha_hasta }}">
+							Siguiente
+						</a>
+					{% else %}
+						<a class="btn btn-noticias disabled" href="#">
+							Siguiente
+						</a>
+					{% endif %}
+				</nav>
+			{% endif %}
+		</div>
+	</div>
+	<div class="col-md-4">
+	</div>
+</div>
+
+<!-- Calendario de eventos
+================================================== -->
+<section class="section">
+	<div class="container">
+		<!-- Calendario -->
+		<div id="calendar"></div>
+	</div>
+    <br>
+</section>
+
+
+{% endblock %}
+
+{% block extrajs %}
+	<script src='{% static "app_novedades/js/eventos.js"%}'></script>
+	<script src='{% static "app_novedades/js/fullcalendar.min.js"%}'></script>
+{% endblock %}
