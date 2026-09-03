@@ -1,0 +1,219 @@
+{% extends "base_principal.html"%}
+{% load static %}
+
+{% block titulo %}Sobre nosotros{% endblock %}
+
+{% block extracss %}
+	<link rel="stylesheet" href="{% static 'app_general/css/estilos-app-general.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<!-- Historia de la organización
+================================================== -->
+<section class="section">
+	<div class="container">
+		<div class="row">
+			<div class="card">
+				<div class="card-header-historia">
+				<p class="card-titulo-historia">Historia</p>
+				</div>
+				<div class="card-body-historia">
+					<div class="row">
+						<div class="col-md-6">
+							<p class="card-text-historia">Esta sección contiene un texto de ejemplo utilizado 
+								como contenido de demostración para representar la historia de una institución. 
+								Su propósito es mostrar cómo se visualizarían párrafos extensos dentro del sitio web, 
+								permitiendo evaluar la distribución del contenido, la tipografía y el diseño general de la página.
+								<br><br>
+								El contenido presentado es completamente ficticio y no corresponde a una organización real. 
+								Puede reemplazarse por información definitiva en cualquier momento sin necesidad de modificar 
+								la estructura de la aplicación. De esta manera, es posible apreciar el comportamiento del diseño 
+								mientras el proyecto se encuentra en desarrollo o se utiliza con fines de demostración.</p>
+						</div>
+						<div class="col-md-6">
+							<p class="card-text-historia">
+								Este espacio está pensado para incluir una reseña institucional, relatando los principales hitos, 
+								objetivos y evolución de la organización a lo largo del tiempo. En esta versión, el texto cumple 
+								únicamente una función ilustrativa, sirviendo como referencia para 
+								visualizar el formato y la presentación de la información dentro del sitio web.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<br>
+</section>
+
+<!-- Progreso historico
+================================================== -->
+<section class="section">
+	<div class="container">
+		<div class="card">
+			<div class="card-header-historia">
+			  <p class="card-titulo-historia">Nuestro Progreso</p>
+			</div>
+			<br>
+			<div class="card-body-historia">
+				<!-- Línea de tiempo -->
+				<div class="timeline">
+					<div class="container_timeline right" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+						<p class="h2_timeline">Fundación de la institución (2026)</p>
+						<div class="content_timeline">
+							<div class="row">
+								<div class="col-md-1">
+								</div>
+								<div class="col-md-11">
+									<div class="panel panel-default-historia">
+										<div id="collapseOne" class="panel-collapse collapse textcollapse">
+											<div class="panel-body">
+												<div class="col-md-4 centrar">
+													<img  class="imagen-timeline" src='{% static "app_general/images/imagen_logo.webp"%}' loading="lazy" alt=" Fundación de la institución">
+												</div>
+												<div class="col-md-8">
+													<p class="p_timeline_historia">Esta es una descripción de 
+                                                        ejemplo utilizada para representar el primer hito de una línea de tiempo. 
+                                                        Su objetivo es mostrar cómo se visualizaría el contenido histórico de una 
+                                                        institución dentro de la aplicación.</p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="container_timeline right" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+						<p class="h2_timeline">Inicio de actividades (2027)</p>
+						<div class="content_timeline">
+							<div class="row">
+								<div class="col-md-1">
+								</div>
+								<div class="col-md-11">
+									<div class="panel panel-default-historia">
+										<div id="collapseTwo" class="panel-collapse collapse textcollapse">
+											<div class="panel-body">
+												<div class="col-md-4 centrar">
+													<img class="imagen-timeline" src='{% static "app_general/images/imagen_logo.webp"%}' loading="lazy" alt=" Inicio de actividades">
+												</div>
+												<div class="col-md-8">
+													<p class="p_timeline_historia">El texto presentado en esta sección es completamente 
+                                                        ficticio y tiene como finalidad servir de contenido de demostración. 
+                                                        Puede reemplazarse por información real sin modificar el diseño del sitio.</p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="container_timeline right" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+						<p class="h2_timeline">Crecimiento institucional (2028)</p>
+						<div class="content_timeline">
+							<div class="row">
+								<div class="col-md-1">
+								</div>
+								<div class="col-md-11">
+									<div class="panel panel-default-historia">
+										<div id="collapseThree" class="panel-collapse collapse textcollapse">
+											<div class="panel-body">
+												<div class="col-md-4 centrar">
+													<img class="imagen-timeline" src='{% static "app_general/images/imagen_logo.webp"%}' loading="lazy" alt=" Crecimiento institucional">
+												</div>
+												<div class="col-md-8">
+													<p class="p_timeline_historia">Este espacio permite apreciar el formato utilizado 
+                                                        para describir acontecimientos importantes. El contenido es ilustrativo y está pensado 
+                                                        únicamente para completar la interfaz durante el desarrollo.</p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="container_timeline right" data-toggle="collapse" data-parent="#accordion" href="#collapseFour">
+						<p class="h2_timeline">Nuevos proyectos (2029)</p>
+						<div class="content_timeline">
+							<div class="row">
+								<div class="col-md-1">
+								</div>
+								<div class="col-md-11">
+									<div class="panel panel-default-historia">
+										<div id="collapseFour" class="panel-collapse collapse textcollapse">
+											<div class="panel-body">
+												<div class="col-md-4 centrar">
+													<img class="imagen-timeline" src='{% static "app_general/images/imagen_logo.webp"%}' loading="lazy" alt=" Nuevos proyectos">
+												</div>
+												<div class="col-md-8">
+													<p class="p_timeline_historia">La información mostrada corresponde a un ejemplo 
+                                                        de contenido institucional. Su propósito es ofrecer una referencia sobre 
+                                                        la distribución y el estilo de los textos dentro de la línea de tiempo.</p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="container_timeline right" data-toggle="collapse" data-parent="#accordion" href="#collapseFive">
+						<p class="h2_timeline">Transformación digital (2030)</p>
+						<div class="content_timeline">
+							<div class="row">
+								<div class="col-md-1">
+								</div>
+								<div class="col-md-11">
+									<div class="panel panel-default-historia">
+										<div id="collapseFive" class="panel-collapse collapse textcollapse">
+											<div class="panel-body">
+												<div class="col-md-4 centrar">
+													<img class="imagen-timeline" src='{% static "app_general/images/imagen_logo.webp"%}' loading="lazy" alt=" Transformación digital">
+												</div>
+												<div class="col-md-8">
+													<p class="p_timeline_historia">Esta descripción simula un acontecimiento relevante 
+                                                        para la institución. Puede sustituirse por contenido 
+                                                        definitivo en cualquier momento, manteniendo la estructura de la aplicación.</p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="container_timeline right" data-toggle="collapse" data-parent="#accordion" href="#collapseSix">
+						<p class="h2_timeline">Expansión de iniciativas (2031)</p>
+						<div class="content_timeline">
+							<div class="row">
+								<div class="col-md-1">
+								</div>
+								<div class="col-md-11">
+									<div class="panel panel-default-historia">
+										<div id="collapseSix" class="panel-collapse collapse textcollapse">
+											<div class="panel-body">
+												<div class="col-md-4 centrar">
+													<img class="imagen-timeline" src='{% static "app_general/images/imagen_logo.webp"%}' loading="lazy" alt=" Expansión de iniciativas">
+												</div>
+												<div class="col-md-8">
+													<p class="p_timeline_historia">El contenido de esta sección es ficticio 
+                                                        y se utiliza exclusivamente para demostrar el funcionamiento del sistema de 
+                                                        gestión de contenidos y la presentación visual del sitio web.</p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<br>
+</section>
+
+{% endblock %}

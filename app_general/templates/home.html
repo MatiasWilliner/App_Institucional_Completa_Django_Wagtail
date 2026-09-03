@@ -1,0 +1,332 @@
+{% extends "base_principal.html"%}
+{% load static %}
+
+{% block titulo %}Home{% endblock %}
+
+{% block extracss %}
+	<link rel="stylesheet" href="{% static 'app_general/css/estilos-app-general.css' %}">
+{% endblock %}
+
+{% block content %}
+
+{% load wagtailcore_tags wagtailimages_tags %}
+
+<!-- Intro con noticias
+================================================== -->
+<section class="section body-imagen-texto">
+	<div class="container">
+		<div class="row">
+			{% if noticias|length == 3 %}
+				<div class="col-md-8">
+					<a href="{% pageurl noticias.0 %}">
+						<div class="container-imagen-texto container-imagen-grande">
+							{% if noticias.0.imagen %}
+								{% image noticias.0.imagen width-2500 as imagen_noticia %}
+								<img class="imagen-grande" src='{{imagen_noticia.url}}' alt="{{noticias.0.title}}">
+							{% else %}
+								<img class="imagen-grande" src='{% static "app_general/images/imagen_default_fondo_oscuro.webp"%}' alt="{{noticias.0.title}}">
+							{% endif %}
+							<div class="content-imagen-texto content-imagen-grande imagen-texto-general">
+								{% if noticias.0.categoria %}
+									<p class="imagen-categoria" style="background-color: {{ noticias.0.categoria.color }};">{{noticias.0.categoria}}</p>
+								{% else %}
+									<p class="imagen-categoria">Sin categoría</p>
+								{% endif %}
+								{% if noticias.0.title|length <= 100 %}
+									<p class="imagen-texto-grande">{{noticias.0.title}}</p>
+								{% else %}
+									<p class="imagen-texto-grande">{{noticias.0.title|slice:":100" }}...</p>
+								{% endif %}
+								{% if noticias.0.descripcion|length <= 100 %}
+									<p class="imagen-texto-chica">{{ noticias.0.descripcion|richtext}}</p>
+								{% else %}
+									<p class="imagen-texto-chica">{{ noticias.0.descripcion|richtext|slice:":100" }}...</p>
+								{% endif %}
+							</div>
+						</div>
+					</a>
+				</div>
+				<div class="col-md-4">
+					<a href="{% pageurl noticias.1 %}">
+						<div class="container-imagen-texto">
+							{% if noticias.1.imagen %}
+								{% image noticias.1.imagen width-1000 as imagen_noticia %}
+								<img class="imagen-chica" src='{{imagen_noticia.url}}' alt="{{noticias.1.title}}">
+							{% else %}
+								<img class="imagen-chica" src='{% static "app_general/images/imagen_default_fondo_oscuro.webp"%}' alt="{{noticias.1.title}}">
+							{% endif %}
+							<div class="content-imagen-texto">
+								{% if noticias.1.categoria %}
+									<p class="imagen-categoria" style="background-color: {{ noticias.1.categoria.color }};">{{noticias.1.categoria}}</p>
+								{% else %}
+									<p class="imagen-categoria">Sin categoría</p>
+								{% endif %}
+								{% if noticias.1.title|length <= 80 %}
+									<p class="imagen-texto-grande">{{noticias.1.title}}</p>
+								{% else %}
+									<p class="imagen-texto-grande">{{noticias.1.title|slice:":80" }}...</p>
+								{% endif %}
+							</div>
+						</div>
+					</a>
+					<br>
+					<a href="{% pageurl noticias.2 %}">
+						<div class="container-imagen-texto">
+							{% if noticias.2.imagen %}
+								{% image noticias.2.imagen width-1000 as imagen_noticia %}
+								<img class="imagen-chica" src='{{imagen_noticia.url}}' alt="{{noticias.2.title}}">
+							{% else %}
+								<img class="imagen-chica" src='{% static "app_general/images/imagen_default_fondo_oscuro.webp"%}' alt="{{noticias.2.title}}">
+							{% endif %}
+							<div class="content-imagen-texto">
+								{% if noticias.2.categoria %}
+									<p class="imagen-categoria" style="background-color: {{ noticias.2.categoria.color }};">{{noticias.2.categoria}}</p>
+								{% else %}
+									<p class="imagen-categoria">Sin categoría</p>
+								{% endif %}
+								{% if noticias.2.title|length <= 80 %}
+									<p class="imagen-texto-grande">{{noticias.2.title}}</p>
+								{% else %}
+									<p class="imagen-texto-grande">{{noticias.2.title|slice:":80" }}...</p>
+								{% endif %}
+							</div>
+						</div>
+					</a>
+				</div>
+			{% elif noticias|length == 2 %}
+				<div class="col-md-6">
+					<a href="{% pageurl noticias.0 %}">
+						<div class="container-imagen-texto container-imagen-grande container-imagen-doble">
+							{% if noticias.0.imagen %}
+								{% image noticias.0.imagen width-400 as imagen_noticia %}
+								<img class="imagen-doble" src='{{imagen_noticia.url}}' alt="{{noticias.0.title}}">
+							{% else %}
+								<img class="imagen-doble" src='{% static "app_general/images/imagen_default_fondo_oscuro.webp"%}' alt="{{noticias.1.title}}">
+							{% endif %}
+							<div class="content-imagen-texto imagen-doble-texto">
+								{% if noticias.0.categoria %}
+									<p class="imagen-categoria" style="background-color: {{ noticias.0.categoria.color }};">{{noticias.0.categoria}}</p>
+								{% else %}
+									<p class="imagen-categoria">Sin categoría</p>
+								{% endif %}
+								{% if noticias.0.title|length <= 100 %}
+									<p class="imagen-texto-grande-doble">{{noticias.0.title}}</p>
+								{% else %}
+									<p class="imagen-texto-grande-doble">{{noticias.0.title|slice:":100" }}...</p>
+								{% endif %}
+								{% if noticias.0.descripcion|length <= 100 %}
+									<p class="imagen-texto-chica-doble">{{ noticias.0.descripcion|richtext}}</p>
+								{% else %}
+									<p class="imagen-texto-chica-doble">{{ noticias.0.descripcion|richtext|slice:":100" }}...</p>
+								{% endif %}
+							</div>
+						</div>
+					</a>
+				</div>
+				<div class="col-md-6">
+					<a href="{% pageurl noticias.1 %}">
+						<div class="container-imagen-texto container-imagen-grande container-imagen-doble">
+							{% if noticias.1.imagen %}
+								{% image noticias.1.imagen width-400 as imagen_noticia %}
+								<img class="imagen-doble" src='{{imagen_noticia.url}}' alt="{{noticias.1.title}}">
+							{% else %}
+								<img class="imagen-doble" src='{% static "app_general/images/imagen_default_fondo_oscuro.webp"%}' alt="{{noticias.1.title}}">
+							{% endif %}
+							<div class="content-imagen-texto imagen-doble-texto">
+								{% if noticias.1.categoria %}
+									<p class="imagen-categoria" style="background-color: {{ noticias.1.categoria.color }};">{{noticias.1.categoria}}</p>
+								{% else %}
+									<p class="imagen-categoria">Sin categoría</p>
+								{% endif %}
+								{% if noticias.1.title|length <= 100 %}
+									<p class="imagen-texto-grande-doble">{{noticias.1.title}}</p>
+								{% else %}
+									<p class="imagen-texto-grande-doble">{{noticias.1.title|slice:":100" }}...</p>
+								{% endif %}
+								{% if noticias.1.descripcion|length <= 100 %}
+									<p class="imagen-texto-chica-doble">{{ noticias.1.descripcion|richtext}}</p>
+								{% else %}
+									<p class="imagen-texto-chica-doble">{{ noticias.1.descripcion|richtext|slice:":100" }}...</p>
+								{% endif %}
+							</div>
+						</div>
+					</a>
+				</div>
+			{% elif noticias|length == 1 %}
+				<div class="col-md-12">
+					<a href="{% pageurl noticias.0 %}">
+						<div class="container-imagen-texto container-imagen-grande container-imagen-simple">
+							{% if noticias.0.imagen %}
+								{% image noticias.0.imagen width-400 as imagen_noticia %}
+								<img class="imagen-simple" src='{{imagen_noticia.url}}' alt="{{noticias.0.title}}">
+							{% else %}
+								<img class="imagen-simple" src='{% static "app_general/images/imagen_default_fondo_oscuro.webp"%}' alt="{{noticias.0.title}}">
+							{% endif %}
+							<div class="content-imagen-texto imagen-simple-texto">
+								{% if noticias.0.categoria %}
+									<p class="imagen-categoria" style="background-color: {{ noticias.0.categoria.color }};">{{noticias.0.categoria}}</p>
+								{% else %}
+									<p class="imagen-categoria">Sin categoría</p>
+								{% endif %}
+								{% if noticias.0.title|length <= 100 %}
+									<p class="imagen-texto-grande">{{noticias.0.title}}</p>
+								{% else %}
+									<p class="imagen-texto-grande">{{noticias.0.title|slice:":100" }}...</p>
+								{% endif %}
+								{% if noticias.0.descripcion|length <= 100 %}
+									<p class="imagen-texto-chica">{{ noticias.0.descripcion|richtext}}</p>
+								{% else %}
+									<p class="imagen-texto-chica">{{ noticias.0.descripcion|richtext|slice:":100" }}...</p>
+								{% endif %}
+							</div>
+						</div>
+					</a>
+				</div>
+			{% else %}
+				<div class="col-md-12">
+				</div>
+			{% endif %}
+		</div>
+	</div>
+</section>
+
+<!-- Descripción de la institución
+================================================== -->
+<section class="section">
+	<div class="container">
+		<div class="row">
+			<div class="card">
+				<div class="card-header-inicio">
+				<p class="card-titulo-inicio">Intitución Ejemplo</p>
+				</div>
+				<div class="card-body">
+					<br>
+					<div class="row container">
+						<div class="col-md-2">
+						</div>
+						<div class="col-md-4 centrar">
+							<br><br><br>
+							<img src='{% static "app_general/images/imagen_home_ejemplo.webp"%}' alt=" Imagen de ejemplo" class="img-home" style="cursor: pointer;">
+							<br><br><br>
+						</div>
+						<div class="col-md-4 centrar">
+							<p class="card-text">Esta es una descripción de ejemplo utilizada como contenido de demostración. 
+								Permite visualizar el diseño y la distribución de la información dentro de la aplicación web 
+								hasta que se incorpore el contenido definitivo.</p>
+							<p class="card-text">El contenido mostrado en esta sección es completamente ficticio y 
+								puede reemplazarse por información real en cualquier momento.</p>
+						</div>
+						<div class="col-md-2"></div>
+					</div>
+					<br>
+				</div>
+			</div>
+		</div>
+	</div>
+	<br>
+</section>
+
+<!-- Preguntas y eventos
+================================================== -->
+<section class="section">
+	<div class="container">
+		<div class="row">
+
+
+			<div class="col-md-8">
+				<div class="panel-group">
+					<div class="panel panel-default">
+						<div class="panel-heading" data-toggle="collapse" data-parent="#accordion" href="#collapseOneq">
+							<h4 class="panel-title">Pregunta 1</h4>
+							<i class="bi bi-chevron-down toggle-icon"></i> <!-- Icono de Bootstrap (permanece fijo) -->
+						</div>
+						<div id="collapseOneq" class="panel-collapse collapse textcollapse">
+							<div class="panel-body">
+								Respuesta 1
+							</div>
+						</div>
+					</div>
+					<div class="panel panel-default">
+						<div class="panel-heading" data-toggle="collapse" data-parent="#accordion" href="#collapseTwoq">
+							<h4 class="panel-title">Pregunta 2</h4>
+							<i class="bi bi-chevron-down toggle-icon"></i> <!-- Icono de Bootstrap (permanece fijo) -->
+						</div>
+						<div id="collapseTwoq" class="panel-collapse collapse textcollapse">
+							<div class="panel-body">
+								Respuesta 2
+							</div>
+						</div>
+					</div>
+					<div class="panel panel-default">
+						<div class="panel-heading" data-toggle="collapse" data-parent="#accordion" href="#collapseThreeq">
+							<h4 class="panel-title">Pregunta 3</h4>
+							<i class="bi bi-chevron-down toggle-icon"></i> <!-- Icono de Bootstrap (permanece fijo) -->
+						</div>
+						<div id="collapseThreeq" class="panel-collapse collapse textcollapse">
+							<div class="panel-body">
+								Respuesta 3
+							</div>
+						</div>
+					</div>
+					<div class="panel panel-default">
+						<div class="panel-heading" data-toggle="collapse" data-parent="#accordion" href="#collapseFourq">
+							<h4 class="panel-title">Pregunta 4</h4>
+							<i class="bi bi-chevron-down toggle-icon"></i> <!-- Icono de Bootstrap (permanece fijo) -->
+						</div>
+						<div id="collapseFourq" class="panel-collapse collapse textcollapse">
+							<div class="panel-body">
+								Respuesta 4
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="col-md-4">
+				<div class="card">
+					<div class="card-header-eventos">
+					  <p class="card-titulo-eventos">Eventos</p>
+					</div>
+					<div class="card-body-eventos">
+						<br>
+						{% if eventos %}
+							<div class="timeline_eventos">
+								{% for evento in eventos %}
+									<div class="container_timeline_eventos right_eventos">
+									<div class="content_timeline_eventos">
+										<h2 class="h2_eventos">{{evento.fecha}}</h2>
+										<a href="">
+											<p class="p_timeline_eventos">{{evento.titulo}}</p>
+										</a>
+									</div>
+									</div>
+								{% endfor %}
+							</div>
+							<br>
+							<div class="row">
+								<div class="col-md-12 centrar">
+									<a class="btn btn-eventos card-eventos" href="eventos">Ver más</a>
+								</div>
+							</div>
+							<br>
+						{% else %}
+							<div class="row">
+								<div class="col-md-12 centrar">
+									<h2 class="h2_eventos">No hay eventos cargados</h2>
+								</div>
+							</div>
+						{% endif %}
+						
+					</div>
+				</div>
+			</div>
+
+
+		</div>
+	</div>
+	<br>
+</section>
+
+
+{% endblock %}

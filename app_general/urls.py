@@ -6,5 +6,6 @@ from . import views
 app_name = 'app_general'  # para usar {% url 'app_principal:ruta_ejemplo' %}
 
 urlpatterns = [
-    #path('', views.home, name='home'),
+    path('', views.home, name='home'),
+    path('sobre_nosotros', views.sobre_nosotros, name='sobre_nosotros'),
 ]
