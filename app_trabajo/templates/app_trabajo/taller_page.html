@@ -1,0 +1,71 @@
+{% extends "base_principal.html"%}
+{% load static %}
+
+{% block titulo%}Detalle taller{%endblock%}
+
+{% block extracss %}
+	<link rel="stylesheet" href="{% static 'app_trabajo/css/estilos-app-trabajo.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<!--Sirve para cargar las etiquetas y filtros especiales de Wagtail que vas a utilizar dentro del template.
+Y también permite trabajar con las imágenes administradas por Wagtail.-->
+{% load wagtailcore_tags wagtailimages_tags %}
+
+<!-- Detalle del taller seleccionada
+================================================== -->
+<section class="section">
+	<div class="container">
+		<!-- Contenido del taller -->
+		<div class="row">
+			<p class="titulo-taller">{{page.title}}</p>
+			<div class="centrar-imagen-taller">
+				{% image page.imagen width-2000 as imagen_taller %}
+				<img class="imagen-detalle-taller" src="{{imagen_taller.url}}" alt="{{page.title}}">
+			</div>
+			<br>
+			<div class="cuerpo-taller">{{page.descripcion|richtext|linebreaks}}</div>
+			<br>
+			{% if page.formulario %}
+				<div class="row centrar">
+                    <a href="{{page.formualrio}}" class="btn btn-areas">¡Participar!</a>
+                </div>
+				<br>
+			{% endif %}
+		</div>
+
+		<!-- Barra de titulo del Carousel -->
+		<h1 class="navbar-brand-areas p-filtros navbar-brand-filtros">Algunas fotos del taller</h1>
+		<!-- Carousel -->
+		<div id="carousel-taller" class="carousel slide" data-ride="carousel">
+			<!-- Indicadores -->
+			<ol class="carousel-indicators">
+				{% for imagen in page.imagenes_extra.all %}
+					<li data-target="#carousel-taller" data-slide-to="{{ forloop.counter0 }}" 
+					{% if forloop.first %}class="active"{% endif %}></li>
+				{% endfor %}
+			</ol>
+			<!-- Imágenes -->
+			<div class="carousel-inner">
+				{% for imagen in page.imagenes_extra.all %}
+				<div class="prueba item {% if forloop.first %} active {% endif %}">
+					{% image imagen.archivo width-400 as imagen_extra %}
+					<img src="{{imagen_extra.url}}" alt="{{imagen_extra.title}}" class="imagen-carousel">
+				</div>
+				{% endfor %}
+			</div>
+			<!-- Controles -->
+			<a class="carousel-control" href="#carousel-taller" data-slide="prev">
+				<i class="bi bi-chevron-left"></i>
+			</a>
+			<a class="right carousel-control" href="#carousel-taller" data-slide="next">
+				<i class="bi bi-chevron-right"></i>
+			</a>
+		</div>
+		<br><br>
+	</div>
+</section>
+
+
+{% endblock %}

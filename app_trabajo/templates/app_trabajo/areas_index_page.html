@@ -1,0 +1,104 @@
+{% extends "base_principal.html"%}
+{% load static %}
+
+{% block titulo%}Áreas{%endblock%}
+
+{% block extracss %}
+	<link rel="stylesheet" href="{% static 'app_trabajo/css/estilos-app-trabajo.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<!--Sirve para cargar las etiquetas y filtros especiales de Wagtail que vas a utilizar dentro del template.
+Y también permite trabajar con las imágenes administradas por Wagtail.-->
+{% load wagtailcore_tags wagtailimages_tags %}
+
+<!-- Título
+================================================== -->
+<section class="section">
+	<nav class="navbar navbar-inverse nav-filtros-areas">
+		<div class="container-fluid">
+			<!-- Título -->
+			<div class="navbar-header-filtros">
+				<h1 class="navbar-brand-areas p-filtros navbar-brand-filtros">Nuestras áreas de trabajo</h1>
+			</div>
+		</div>
+	</nav>
+</section>
+
+<section class="section">
+	<!-- Cards de areas -->
+	<div id="contenedor-areas" class="container">
+
+		{% for area in areas %}
+
+			<div class="container card-body-areas-borde">
+				<div class="card">
+					<div class="row">
+						<div class="col-md-4 centrar">
+						{% if area.imagen %}
+							{% image area.imagen width-2000 as imagen_area %}
+								<img src="{{imagen_area.url}}" class="imagen-areas" alt="{{area.title}}">
+						{% endif %}
+						</div>
+						<div class="col-md-8">
+							<div class="row">
+								<div class="col-md-12">
+									<h3 class="card-title-areas">{{area.title}}</h3>
+									<p class="card-text-areas">{{area.descripcion|richtext}}</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div><br>
+
+		{% empty %}
+
+			<p class="text-center">No hay áreas</p>
+
+		{% endfor %}
+	</div>
+</section>
+
+<!-- Paginación -->
+<div class="row">
+	<div class="col-md-4">
+	</div>
+	<div class="col-md-4">
+		<div class="mejora-paginacion">
+			{% if areas.has_other_pages %}
+				<div class="pagination btn-group" role="group" aria-label="Basic example">
+					<nav>
+						{% if areas.has_previous %}
+							<a class="btn btn-areas" href="?page={{ areas.previous_page_number }}">
+								Anterior
+							</a>
+						{% else %}
+							<a class="btn btn-areas disabled" href="#">
+								Anterior
+							</a>
+						{% endif %}
+						<span>
+							<a id="pagina-actual" class="btn btn-areas disabled">{{areas.number}}</a>
+						</span>
+						{% if areas.has_next %}
+							<a class="btn btn-areas" href="?page={{ areas.next_page_number }}">
+								Siguiente
+							</a>
+						{% else %}
+							<a class="btn btn-areas disabled" href="#">
+								Siguiente
+							</a>
+						{% endif %}
+					</nav>
+				</div>
+			{% endif %}
+		</div>
+	</div>
+	<div class="col-md-4">
+	</div>
+</div>
+
+
+{% endblock %}
