@@ -287,7 +287,10 @@ Y también permite trabajar con las imágenes administradas por Wagtail.-->
 									{{noticia.categoria}}
 								</p>
 								<h3 class="card-title-noticias">{{noticia.title}}</h3>
-								<p class="card-text-noticias">{{ noticia.descripcion|richtext }}</p>
+								<div class="card-text-noticias">
+									{{ noticia.descripcion|richtext }}
+								</div>
+		
 							</div>
 						</div>
 						<div class="row centrar">

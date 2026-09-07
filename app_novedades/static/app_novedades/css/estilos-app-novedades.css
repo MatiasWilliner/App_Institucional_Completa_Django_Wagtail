@@ -15,7 +15,7 @@ div.card-body-borde-noticias{
 	border-style:solid;
 	border-width: medium;
 }
-p.card-text-noticias{
+.card-text-noticias{
 	font-family: "Roboto";
 	font-size: 16px;
 	text-align: left;
@@ -258,7 +258,7 @@ input#fecha-desde{
 		padding-bottom: 5%;
 		padding-top: 5%;
 	}
-	p.card-text-noticias {
+	.card-text-noticias {
 		font-size: 12px;
 		text-align: justify;
 		padding-bottom: 5%;
@@ -301,6 +301,16 @@ input#fecha-desde{
 	}
 	.btn-noticias {
     	left: 0%;
+	}
+	.container-imagen-texto {
+    	position: relative;
+    	max-width: 800px;
+    	margin-top: -5%;
+    	margin-bottom: 5%;
+	}
+	.container-imagen-texto.container-imagen-grande {
+		margin-top: 2%;
+		margin-bottom: 10%;
 	}
 	/* estilos barra de filtros */
 	.navbar-brand-noticias {
@@ -367,6 +377,12 @@ input#fecha-desde{
 	.navbar-inverse .navbar-brand {
 		padding: 3px 30px;
 	}
+	.fc-toolbar-title{
+		font-size: small !important;
+	}
+	.fc .fc-button {
+    	font-size: smaller !important;
+	}
 
 
 }
@@ -404,7 +420,7 @@ input#fecha-desde{
 		padding-bottom: 5%;
 		padding-top: 5%;
 	}
-	p.card-text-noticias {
+	.card-text-noticias {
 		font-size: 15px;
 		text-align: justify;
 		padding-bottom: 5%;
@@ -567,6 +583,16 @@ input#fecha-desde{
 	.container-imagen-texto .content-imagen-texto.imagen-doble {
         margin-bottom: 1% !important;
     }
+	.container-imagen-texto {
+		position: relative;
+		max-width: 800px;
+		margin-top: -5%;
+		margin-bottom: 5%;
+	}
+	.container-imagen-texto.container-imagen-grande {
+		margin-top: 2%;
+		margin-bottom: 10%;
+	}
 	/* estilos barra de filtros */
 	.navbar-brand {
         height: 60px;
@@ -641,7 +667,7 @@ input#fecha-desde{
 		text-align: justify;
 		font-size: 20px;
 	}
-	p.card-text-noticias {
+	.card-text-noticias {
 		font-size: 15px;
 		text-align: justify;
 	}
@@ -769,6 +795,12 @@ input#fecha-desde{
 	.navbar-inverse .navbar-brand {
 		padding: 3px 25px;
 		margin-right: 150px;
+	}
+	.fc-toolbar-title{
+		font-size: large !important;
+	}
+	.fc .fc-button {
+    	font-size: medium !important;
 	}
 
 
@@ -902,7 +934,7 @@ input#fecha-desde{
 		text-align: justify;
 		font-size: 24px;
 	}
-	p.card-text-noticias {
+	.card-text-noticias {
 		font-size: 18px;
 		text-align: justify;
 	}
@@ -1075,7 +1107,7 @@ input#fecha-desde{
 		text-align: justify;
 		font-size: 40px;
 	}
-	p.card-text-noticias {
+	.card-text-noticias {
 		font-size: 35px;
 		text-align: justify;
 	}
@@ -1204,17 +1236,13 @@ input#fecha-desde{
 	.fc-daygrid-day-number {
     	font-size: x-large;
 	}
-	.fc .fc-button {
-		font-size: 150% !important;
-		line-height: 2!important;
-	}
 	.fc table {
     	font-size: xx-large!important;
 	}
 	.pagination.btn-group{
 		margin-left: 20%;
 	}
-	
+
 
 }
 
