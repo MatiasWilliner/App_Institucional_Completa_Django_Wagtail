@@ -77,7 +77,7 @@ TEMPLATES = [
                 # Context processor para poder usar las páginas personaizadas de wagtail
                 # en la navbar de la template base_principal.html, el cual se encuentra en 
                 # la carpeta del proyecto
-                #'AppCompletaEjemploCMS.context_processors.navegacion',
+                'AppCompletaEjemploCMS.context_processors.navegacion',
             ],
         },
     },

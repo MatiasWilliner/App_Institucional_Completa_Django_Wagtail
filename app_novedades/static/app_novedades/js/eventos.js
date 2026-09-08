@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function() {
             month: 'Mes',
             listMonth: 'Agenda',
         },
-        events:'/eventos',
+        events:'/eventos_json',
     });
     calendar.render();
 });

@@ -63,19 +63,19 @@
 				<nav class="collapse navbar-collapse bs-navbar-collapse navbar-right" role="navigation">
 				<ul class="nav navbar-nav">
 					<li>
-					<a href="{% url 'app_general:home' %}">Inicio</a>
+						<a href="{% url 'app_general:home' %}">Inicio</a>
 					</li>
 					<li>
-					<a href="{% url 'app_general:sobre_nosotros' %}">Sobre Nosotros</a>
+						<a href="{% url 'app_general:sobre_nosotros' %}">Sobre Nosotros</a>
 					</li>
-					<!--<li class="dropdown">
+					<li class="dropdown">
 						<a href="" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Nuestro Trabajo</a>
 						<ul class="dropdown-menu">
-							<li><a href="">Áreas</a></li>
+							<li><a href="{% pageurl pagina_areas %}">Áreas</a></li>
 							<li role="separator" class="divider"></li>
-							<li><a href="">Talleres</a></li>
+							<li><a href="{% pageurl pagina_talleres %}">Talleres</a></li>
 						</ul>
-					</li>-->
+					</li>
 					<li class="dropdown">
 						<a href="" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Novedades</a>
 						<ul class="dropdown-menu">
@@ -93,7 +93,7 @@
 						</ul>
 					</li>
 					<li>
-					<a href="{% url 'app_contacto:contacto' %}">Contacto</a>
+						<a href="{% url 'app_contacto:contacto' %}">Contacto</a>
 					</li>
 				</ul>
 				</nav>
@@ -114,9 +114,9 @@
 						<!-- Logo y título -->
 						<div class="col-md-3 img_pie">
 							<br>
-							<a href="{% url 'app_general:home' %}" class="lighter">
+								<a href="{% url 'app_general:home' %}" class="lighter">
 								<div class="navbar-left">
-									<a href="home" class="lighter">
+									<a href="{% url 'app_general:home' %}" class="lighter">
 										<img src='{% static "images/logo.webp"%}' loading="lazy" alt="Logo" class="imagen_barra">
 									</a>
 								</div>
@@ -131,22 +131,22 @@
 								<a href="{% url 'app_general:home' %}">Inicio</a>
 							</div>
 							<div class="row centrar subtitulosDospie">
-								<a href="">Sobre nosotros</a>
+								<a href="{% url 'app_general:sobre_nosotros' %}">Sobre nosotros</a>
 							</div>
 							<div class="row centrar subtitulosDospie">
-								<a href="">Áreas</a>
+								<a href="{% pageurl pagina_areas %}">Áreas</a>
 							</div>
 							<div class="row centrar subtitulosDospie">
-								<a href="">Talleres</a>
+								<a href="{% pageurl pagina_talleres %}">Talleres</a>
 							</div>
 							<div class="row centrar subtitulosDospie">
-								<a href="">Noticias</a>
+								<a href="{% pageurl pagina_noticias %}">Noticias</a>
 							</div>
 							<div class="row centrar subtitulosDospie">
-								<a href="">Eventos</a>
+								<a href="{% pageurl pagina_eventos %}">Eventos</a>
 							</div>
 							<div class="row centrar subtitulosDospie">
-								<a href="">Contacto</a>
+								<a href="{% url 'app_contacto:contacto' %}">Contacto</a>
 							</div>
 						</div>
 						<div class="col-md-1">

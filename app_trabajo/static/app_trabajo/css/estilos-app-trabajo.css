@@ -274,7 +274,6 @@ p.card-text-areas{
 	}
 	.navbar-brand-areas.p-filtros.navbar-brand-filtros{
 		font-size: 15px;
-		text-align: center;
 	}
 
 }
@@ -393,7 +392,6 @@ p.card-text-areas{
 	}
 	.navbar-brand-areas.p-filtros.navbar-brand-filtros{
 		font-size: 15px;
-		text-align: center;
 	}
 
 
@@ -498,7 +496,6 @@ p.card-text-areas{
 	}
 	.navbar-brand-areas.p-filtros.navbar-brand-filtros{
 		font-size: 30px !important;
-		text-align: center;
 	}
 
 
@@ -560,8 +557,7 @@ p.card-text-areas{
 		text-align: justify;
 	}
 	.navbar-brand-areas.p-filtros.navbar-brand-filtros{
-		font-size: 35px;
-		text-align: center;
+		font-size: 25px;
 	}
 
 
@@ -637,8 +633,7 @@ p.card-text-areas{
 		display: initial !important;
 	}
 	.navbar-brand-areas.p-filtros.navbar-brand-filtros{
-		font-size: 65px;
-		text-align: center;
+		font-size: 50px;
 	}
 	
 
