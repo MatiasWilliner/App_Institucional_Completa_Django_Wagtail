@@ -3,9 +3,9 @@
 
 
 
-/* Estilos y elementos generales sección nuestro trabajo */
+/* Estilos y elementos generales sección Nuestro Trabajo */
 
-/* Estilos para carta de información en sección nuestro trabajo */
+/* Estilos para carta de información en sección Nuestro Trabajo */
 div.card-body-areas{
 	border-color:#3D7DBA;
 	border-style:none;
@@ -116,7 +116,7 @@ p.card-text-areas{
 @media (max-width:490px) {
 
 
-	/* Estilos seccuión nuestro trabajo */
+	/* Estilos sección Nuestro Trabajo */
 
 	.btn-areas {
 		left: 10%;
@@ -154,6 +154,9 @@ p.card-text-areas{
 		min-width:100%;
 		height: 150px;
 	}
+	.pagination.btn-group{
+		margin-left: 15%;
+	}
 
 
 	/* Estilos página detalle taller */
@@ -189,7 +192,7 @@ p.card-text-areas{
 @media (min-width:491px) and (max-width:767px) {
 
 
-	/* Estilos sección nuestro trabajo */
+	/* Estilos sección Nuestro Trabajo */
 
 	.btn-areas {
 		left: 20%;
@@ -259,7 +262,7 @@ p.card-text-areas{
 @media (min-width:768px) and (max-width:991px){
 
 
-	/* Estilos sección nuestro trabajo */
+	/* Estilos sección Nuestro Trabajo */
 
 	.btn-areas {
     	left: 0% !important;
@@ -292,13 +295,16 @@ p.card-text-areas{
 	.navbar {
         min-height: 80px;
     }
+	.pagination.btn-group{
+		margin-left: 35%;
+	}
 
 
 }
 @media (min-width:768px) and (max-width:1023px) {
 
 
-	/* Estilos sección nuestro trabajo */
+	/* Estilos sección Nuestro Trabajo */
 	
 	.btn-areas {
 		left: 20%;
@@ -484,6 +490,10 @@ p.card-text-areas{
 		margin-left: 5%;
 		width:1000px;
 		min-height: 500px;
+	}
+	.pagination.btn-group{
+		margin-left: 35%;
+		margin-bottom: 10%;
 	}
 
 
