@@ -1,0 +1,532 @@
+/* ------------------------------------- Proyecto Ejemplo CMS ------------------------------------- */
+
+
+
+
+/* Estilos y elementos generales sección Nuestro Trabajo */
+
+/* Estilos para carta de información en sección Nuestro Trabajo */
+div.card-body-areas{
+	border-color:#3D7DBA;
+	border-style:none;
+}
+div.card-body-areas-borde{
+	border-color:#3D7DBA;
+	border-style:solid;
+	border-width: medium;
+}
+p.card-text-areas{
+	font-family: "Roboto";
+	font-size: 16px;
+	text-align: left;
+	margin-left: 10%;
+	margin-right: 10%;
+	margin-top: 2%;
+	margin-bottom: 2%;
+}
+.card-title-areas{
+	font-family: "Roboto";
+	text-align: left;
+	margin-left: 10%;
+	margin-right: 10%;
+	margin-top: 2%;
+	margin-bottom: 2%;
+}
+.btn-areas{
+	background-color: #3D7DBA;
+	color: #ffffff;
+	position:relative;
+	left: 10%;
+	margin-top: 2%;
+	margin-bottom: 2%;
+	font-size: small;
+	text-transform: none;
+}
+.btn.btn-areas:hover{
+	background-color: #5b9ddb;
+	color: #ffffff;
+}
+.card-imagen-areas{
+	padding: 2%;
+}
+.centrar-imagen{
+	text-align: center;
+	margin-bottom: 5%;
+	margin-top: 5%;
+	vertical-align: -webkit-baseline-middle;
+}
+.card-item-areas{
+	text-align: center;
+	font-size: 18px;
+	font-family: "Roboto";
+	font-weight: 600;
+}
+.imagen-areas{
+	padding: 4%;
+	min-width:100%;
+	max-height: 180px;
+}
+
+
+/* Estilos y elementos generales página Detalle de taller */
+
+/* Estilos del detalle de taller */
+.titulo-taller{
+	font-family: "Roboto";
+	font-size: 30px;
+	font-weight: 700;
+	padding: 5px 5px ;
+	margin-top: 1%;
+	margin-bottom: 1%;
+}
+.subtitulo-taller{
+	font-family: "Roboto";
+	font-size: 18px;
+	font-weight: 600;
+	padding: 5px 5px ;
+	margin-top: 1%;
+	margin-bottom: 1%;
+}
+.cuerpo-taller{
+	font-family: "Roboto";
+	text-align: justify;
+	font-weight:400;
+	padding: 5px 5px ;
+	margin-top: 1%;
+	margin-bottom: 1%;
+}
+.centrar-imagen-taller{
+	text-align: center;
+}
+.imagen-taller{
+	width: 500px;
+	height: auto;
+}
+
+
+
+
+/*	------------------------------------- Responsive -------------------------------------	*/ 
+
+
+
+
+/* Correcciones para diferentes tamaños */
+
+@media (max-width:490px) {
+
+
+	/* Estilos sección Nuestro Trabajo */
+
+	.btn-areas {
+		left: 10%;
+		margin-top: 2%;
+		margin-bottom: 5%;
+		font-size: 12px;	
+	}
+	.btn-areas {
+    	left: 0%;
+	}
+	/* -- estilos de card -- */
+	div.card-body-borde-areas {
+		margin-left: 5%;
+		margin-right: 5%;
+	}
+	.badge-areas {
+		font-size: 12px;
+		margin-top: 5%;
+	}
+	.card-title-areas {
+		text-align: justify;
+		font-size: 16px;
+		padding-bottom: 5%;
+		padding-top: 5%;
+	}
+	p.card-text-areas {
+		font-size: 12px;
+		text-align: justify;
+		padding-bottom: 5%;
+	}
+	.card-imagen-areas {
+		margin-top: 5%;
+	}
+	.imagen-areas{
+		min-width:100%;
+		height: 150px;
+	}
+	.pagination.btn-group{
+		margin-left: 15%;
+	}
+
+
+	/* Estilos página detalle taller */
+
+	.titulo-taller {
+		font-size: 16px;
+		text-align: justify;
+	}
+	.subtitulo-taller {
+		font-size: 16px;
+	}
+	.cuerpo-taller {
+		font-size: 12px;
+	}
+	.imagen-detalle-taller{
+		min-width:100%;
+		max-height: 290px;
+	}
+	.imagen-carousel {
+		min-width: 280px !important;
+		max-width: 280px !important;
+		min-height: 150px;
+		max-height: 150px;
+		display: initial !important;
+	}
+	.carousel-control {
+		font-size: x-small;
+		height: 10%;
+    	width: 5%;
+	}
+
+}
+@media (min-width:491px) and (max-width:767px) {
+
+
+	/* Estilos sección Nuestro Trabajo */
+
+	.btn-areas {
+		left: 20%;
+		margin-top: 2%;
+		margin-bottom: 5%;
+		font-size: 15px;	
+	}
+	/* -- estilos de card -- */
+	div.card-body-borde-areas {
+		margin-left: 5%;
+		margin-right: 5%;
+	}
+	.badge-areas {
+		font-size: 15px;
+		margin-top: 5%;
+	}
+	.card-title-areas {
+		text-align: justify;
+		font-size: 18px;
+		padding-bottom: 5%;
+		padding-top: 5%;
+	}
+	p.card-text-areas {
+		font-size: 15px;
+		text-align: justify;
+		padding-bottom: 5%;
+	}
+	.btn-areas {
+		left: 20%;
+		margin-top: 2%;
+		margin-bottom: 5%;
+		font-size: 15px;	
+	}
+	.card-imagen-areas {
+		margin-top: 5%;
+	}
+	.imagen-areas{
+		min-width:100%;
+		height: 359px;
+	}
+
+
+	/* Estilos página detalle taller */
+
+	.titulo-taller {
+		font-size: 18px;
+		text-align: justify;
+	}
+	.subtitulo-taller {
+		font-size: 18px;
+	}
+	.cuerpo-taller {
+		font-size: 15px;
+	}
+	.imagen-detalle-taller{
+		min-width:100%;
+		max-height: 420px;
+	}
+	.carousel-control {
+		font-size: medium;
+		height: 10%;
+    	width: 5%;
+	}
+
+
+}
+@media (min-width:768px) and (max-width:991px){
+
+
+	/* Estilos sección Nuestro Trabajo */
+
+	.btn-areas {
+    	left: 0% !important;
+	}
+	.card-imagen-areas {
+        margin-left: 0% !important;
+    }
+	.navbar-brand-areas {
+        height: 10px !important;
+        font-size: 20px !important;
+        margin-bottom: 1% !important;
+		margin-top: 2% !important;
+    }
+	.imagen-areas{
+		min-height: 486px !important;
+		padding: 0% !important;
+		padding-top: 2% !important;
+		margin-top: 0px !important;
+	}
+	.carousel-control {
+		font-size: 90%;
+	}
+	.imagen-carousel {
+		min-height: 400px !important;
+		min-width: 600px !important;
+		max-width: 600px !important;
+		max-height: 400px !important;
+		display: initial !important;
+	}
+	.navbar {
+        min-height: 80px;
+    }
+	.pagination.btn-group{
+		margin-left: 35%;
+	}
+
+
+}
+@media (min-width:768px) and (max-width:1023px) {
+
+
+	/* Estilos sección Nuestro Trabajo */
+	
+	.btn-areas {
+		left: 20%;
+		font-size: 15px;	
+	}
+	/* -- estilos de card -- */
+	div.card-body-borde-areas {
+		margin-left: 0%;
+		margin-right: 0%;
+		margin-top: 5%;
+	}
+	.card-title-areas {
+		text-align: justify;
+		font-size: 20px;
+	}
+	p.card-text-areas {
+		font-size: 15px;
+		text-align: justify;
+	}
+	.btn-areas {
+		left: 20%;
+		font-size: 15px;	
+	}
+	.card-imagen-areas {
+		margin-left: 2%;
+	}
+	.imagen-areas{
+		padding: 4%;
+		min-width:100%;
+		min-height: 450px;
+		margin-top: 50px;
+	}
+
+
+	/* Estilos página detalle taller */
+
+	.titulo-taller {
+		font-size: 20px;
+		text-align: justify;
+	}
+	.subtitulo-taller {
+		font-size: 20px;
+	}
+	.cuerpo-taller {
+		font-size: 15px;
+	}
+	.imagen-detalle-taller{
+		min-width:100%;
+		max-height: 500px;
+	}
+
+
+}
+@media (min-width:1024px) and (max-width:1200px) {
+
+
+	/* Estilos sección Nuestro Trabajo */
+
+	.imagen-areas{
+		min-width:100%;
+		max-height: 195px;
+		width:400px;
+		height:300px;
+	}
+	.card-imagen-areas{
+		margin-top: 10%;
+		margin-left: 10%;
+	}
+	.navbar-brand-areas {
+        height: 18px !important;
+        font-size: 18px !important;
+        margin-bottom: 3% !important;
+    }
+
+
+	/* Estilos página detalle taller */
+
+	.titulo-taller {
+		text-align: justify;
+	}
+	.subtitulo-taller {
+		font-size: 25px;
+	}
+	.cuerpo-taller p{
+		font-size: 20px;
+	}
+	.imagen-detalle-taller{
+		min-width:100%;
+		max-height: 650px;
+	}
+
+
+}
+@media (min-width:1200px) and (max-width:1999px) {
+
+
+	/* Estilos página Nuestro Trabajo */
+	
+	.btn-areas {
+		left: 20%;
+		font-size: 18px;	
+	}
+	/* -- estilos de card -- */
+	div.card-body-borde-areas {
+		margin-left: 0%;
+		margin-right: 0%;
+	}
+	.card-title-areas {
+		text-align: justify;
+		font-size: 24px;
+	}
+	p.card-text-areas {
+		font-size: 18px;
+		text-align: justify;
+	}
+	.btn-areas {
+		left: 20%;
+		font-size: 18px;	
+	}
+	.card-imagen-areas {
+		margin-top: 8%;
+        margin-left: 10%;
+    }
+	.imagen-areas{
+		min-width:100%;
+		height: 237px;
+	}
+
+
+	/* Estilos página detalle taller */
+
+	.titulo-taller {
+		font-size: 35px;
+		text-align: justify;
+	}
+	.subtitulo-taller {
+		font-size: 20px;
+	}
+	.cuerpo-taller p {
+		font-size: 20px;
+	}
+	.imagen-detalle-taller{
+		min-width:100%;
+		max-height: 700px;
+	}
+
+
+}
+@media (min-width:2000px) {
+
+
+	/* Estilos sección Nuestro Trabajo */
+	
+	.btn-areas {
+		left: 10%;
+		font-size: 12px;
+		margin-top: 6%;	
+	}
+	/* -- estilos de card -- */
+	.badge-areas {
+		font-size: 35px;
+		margin-top: 5%;
+		padding: 1%;
+	}
+	.card-title-areas {
+		text-align: justify;
+		font-size: 40px;
+	}
+	p.card-text-areas {
+		font-size: 35px;
+		text-align: justify;
+	}
+	.btn-areas {
+		left: 10%;
+		font-size: 12px;
+		margin-top: 6%;	
+	}
+	.card-imagen-areas {
+		margin: 10%;
+	}
+	.imagen-areas{
+		padding: 4%;
+		margin-left: 5%;
+		width:1000px;
+		min-height: 500px;
+	}
+	.pagination.btn-group{
+		margin-left: 35%;
+		margin-bottom: 10%;
+	}
+
+
+	/* Estilos página detalle taller */
+
+	.titulo-taller {
+		font-size: 70px;
+		text-align: justify;
+	}
+	.subtitulo-taller {
+		font-size: 38px;
+	}
+	.cuerpo-taller p {
+		font-size: 40px !important;
+	}
+	.imagen-detalle-taller{
+		min-width:100%;
+		max-height: 1200px;
+	}
+	.carousel-control {
+		font-size: xx-large;
+	}
+	.imagen-carousel{
+		min-height: 800px !important;
+		min-width: 1200px !important;
+		max-width: 1200px !important;
+		max-height: 800px !important;
+		display: initial !important;
+	}
+	
+
+}
+
+
+
+
