@@ -1,0 +1,471 @@
+/* ------------------------------------- Proyecto Ejemplo CMS ------------------------------------- */
+
+
+
+
+/*Colores*/
+.color_general {
+	background-color: #0D1B2A;
+}
+.color_general_v2{
+	background-color:#1B4F72
+}
+.color_nuestro_trabajo{
+	background-color: #3D7DBA
+}
+.color_novedades{
+	background-color:#2CA9A1;
+}
+.color_general_v3{
+	background-color:#F2F4F8;
+}
+.color_contacto{
+	background-color:#333333;
+}
+
+/* Fuentes */
+.titulo{
+	font-weight:bold;
+	font-family:'Roboto';
+	font-size: 40pt;
+}
+.subtitulosUno{
+	font-weight:600;
+	font-family:'Roboto';
+	font-size: 35pt;
+}
+.subtitulosDos{
+	font-weight:700;
+	font-family:'Roboto';
+	font-size: 25pt;
+}
+.cuerpo_texto{
+	font-family:'Roboto';
+	font-size: 25pt;
+}
+.menu_principal{
+	font-weight:700;
+	font-family:'Roboto';
+	font-size: 25pt;
+	text-transform: uppercase;
+}
+.menu_inferior{
+	font-weight:700;
+	font-family:'Roboto';
+	font-size: 25pt;
+}
+
+.login{
+	background-color:#1B4F72;
+}
+
+
+/* Estilos página de inicio*/
+.icon{
+	fill:#1B4F72;
+}
+.sidebar__inner{
+	background-color:#1B4F72;
+}
+.sidebar-footer.sidebar-footer{
+	background-color: #2CA9A1
+}
+.w-bg-surface-menus{
+	background-color: #2CA9A1;
+}
+.w-bg-surface-menus:hover{
+	background-color: #2CA9A1;
+}
+.w-bg-surface-menus::focus{
+	background-color: #2CA9A1;
+}
+.hover\:w-bg-surface-menu-item-active:focus{
+	background-color:#2CA9A1;
+}
+.w-h1{
+	color:#1B4F72;
+}
+.w-panel__heading {
+	color:#1B4F72;
+}
+.listing .title .title-wrapper a{
+	color:#1B4F72;
+}
+.w-panel__icon{
+	fill: #1B4F72;
+}
+.w-summary .icon {
+	fill: #1B4F72;
+}
+.sidebar-sub-menu-panel{
+	background-color:#3D7DBA
+}
+.c-page-explorer__header__title__inner{
+	background-color:#3D7DBA
+}
+.sidebar-menu-item.sidebar-page-explorer-item.sidebar-menu-item--active.sidebar-sub-menu-item--open{
+	background-color:#3D7DBA
+}
+.c-page-explorer__drawer{
+	background-color:#3D7DBA
+}
+.sidebar-menu-item.sidebar-sub-menu-item.sidebar-menu-item--active.sidebar-sub-menu-item--open{
+	background-color:#3D7DBA
+}
+.sidebar-menu-item.sidebar-menu-item--active{
+	background-color:#3D7DBA
+}
+.button.sidebar__collapse-toggle:hover{
+	background-color:#3D7DBA
+}
+.button.sidebar__collapse-toggle:focus{
+	background-color:#3D7DBA
+}
+.c-page-explorer__item__link:hover{
+	background-color:#2CA9A1;
+}
+.c-page-explorer__item__action.c-page-explorer__item__action--small:hover{
+	background-color:#2CA9A1;
+}
+.c-page-explorer__item__action:hover{
+	background-color:#2CA9A1;
+}
+svg.icon.icon-arrow-right.default{
+	fill:#ffffff !important;
+}
+.icon--menuitem{
+	fill: #ffffff !important;
+}
+.icon-plus:hover{
+	fill: #ffffff !important;
+}
+.icon.icon-arrow-right.sidebar-sub-menu-trigger-icon{
+	fill: #ffffff !important;
+}
+.icon.icon-home.icon--explorer-header{
+	fill: #ffffff;
+}
+.sidebar-footer__account-label.w-label-3{
+	color:#ffffff !important;
+}
+/* estilos paneles */
+.listing td.titulo-panel {
+    text-align: center;
+}
+.cards-panel { 
+	display: flex; 
+	flex-wrap: wrap; 
+	gap: 20px; 
+	justify-content: center; 
+}
+.card-panel { 
+	width: 280px;
+	border-radius: 12px; 
+	overflow: hidden; 
+	background: #ffffff;
+	box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12); 
+	transition: transform 0.2s ease, box-shadow 0.2s ease; 
+} 
+.card-panel:hover { 
+	transform: translateY(-4px); 
+	box-shadow: 0 6px 14px rgba(0, 0, 0, 0.18); 
+} 
+.card-panel-image { 
+	height: 150px; 
+	display: flex; 
+	align-items: center; 
+	justify-content: center; 
+	padding: 20px; 
+	border-bottom: 1px solid #ddd; 
+} 
+.card-panel-image img { 
+	max-width: 100%; 
+	max-height: 120px; 
+	object-fit: contain; 
+} 
+.card-panel-content { 
+	padding: 18px; 
+	text-align: center; 
+} 
+.card-panel-content h2 { 
+	margin: 0 0 8px; 
+	color: #1B4F72; 
+	font-size: 22px; 
+} 
+.card-panel-content p { 
+	margin: 0 0 16px; 
+	color:#1B4F72; 
+	font-size: 14px; 
+}
+.cantidad-numero{
+	text-align: center;
+}
+.texto-cantidades{
+	font-weight: bold;
+	color:#1B4F72;
+}
+.icon.icon-arrow-up{
+	fill:#ffffff !important;
+}
+.icon.icon-arrow-down{
+	fill:#ffffff !important;
+}
+
+
+/* Estilos página inicio de sesión */
+:root {
+    --w-login-fullscreen-background: #2CA9A1;;
+}
+.login h1{
+	color:#1B4F72;
+}
+.login .w-field__label{
+	color:#1B4F72;
+}
+.login .button{
+	background-color:#3D7DBA;
+}
+.imagen_inicio_sesion{
+	align-content: center;
+}
+
+
+/* Estilos página de creación */
+.pagination li.pagination__page-number.pagination__page-number--current a{
+	background-color:#2CA9A1;
+}
+.listing .children a{
+	color:#2CA9A1;
+}
+.w-text-text-label{
+	color:#1B4F72;
+}
+.w-text-text-label:hover{
+	color:#1B4F72;
+}
+.w-dropdown__content{
+	background-color:#1B4F72;
+}
+.w-dropdown__content a:hover{
+	background-color:#3D7DBA;
+}
+.tippy-arrow{
+	color:#1B4F72;
+}
+.w-help-text{
+	color:#ffff;
+}
+.w-drilldown .w-drilldown__toggle{
+	color:#ffff;
+}
+.w-drilldown .w-drilldown__toggle:hover{
+	color:#ffff;
+	background-color:#3D7DBA;
+}
+.form-side__panel{
+	background-color:#1B4F72;
+}
+.w-label-1{
+	color:#ffff;
+}
+.w-label-3{
+	color:#ffff;
+}
+.form-side__close-button{
+	background-color:#1B4F72;
+	fill:#ffffff;
+}
+.w-text-text-link-default{
+	color:#2CA9A1;
+}
+.w-text-text-link-default:hover{
+	color:#2CA9A1;
+	text-decoration:underline;
+}
+.form-side__resize-grip{
+	background-color:#333333;
+	color:#ffff;
+}
+#icon-edit{
+	fill: #ffffff;
+}
+#icon-arrow-right-full{
+	fill: #ffffff;
+}
+#icon-copy{
+	fill: #ffffff;
+}
+#icon-bin{
+	fill: #ffffff;
+}
+#icon-lock-open{
+	fill: #ffffff;
+}
+#icon-view{
+	fill: #2CA9A1;
+}
+#icon-expand-right{
+	fill: #ffffff;
+}
+#icon-download{
+	fill:#ffffff
+}
+.w-dropdown__content .icon.icon-list-ul.icon{
+	fill: #ffffff;
+}
+.w-dropdown__content .icon.icon-history.icon{
+	fill: #ffffff;
+}
+.w-side-panel-toggle__icon{
+	color:#1B4F72 !important;
+}
+.w-header .w-header__title, .w-header h1{
+	color:#1B4F72;
+}
+.icon.icon-doc-empty-inverse.w-header__glyph{
+	fill:#1B4F72;
+}
+.icon.icon-plus-inverse.default.w-shrink-0{
+	fill:#1B4F72;
+}
+a svg.icon.icon-doc-empty.icon{
+	fill:#ffffff !important;
+}
+a svg.icon.icon-circle-plus.icon{
+	fill:#ffffff !important;
+}
+
+
+/* Estilos página de administración de imágenes */
+svg .icon.icon-list-ul.icon{
+	fill: #1B4F72 !important;
+}
+
+
+/* Estilos página principal (entre root y las demas como noticias y eventos) */
+.icon.icon-mobile-alt.w-side-panel-toggle__icon{
+	fill:#1B4F72;
+}
+.icon.icon-glasses.w-side-panel-toggle__icon{
+	fill:#1B4F72;
+}
+.icon.icon-comment.w-side-panel-toggle__icon{
+	fill:#1B4F72;
+}
+.icon-arrow-right.icon--item-action{
+	fill: #ffffff;
+}
+
+
+/* Estilos página root */
+.icon.icon-site.initial{
+	fill:#1B4F72;
+}
+
+
+/* Estilos sección propiedades */
+.button.bicolor.button--icon{
+	background-color: #1B4F72;
+}
+.w-label-3{
+	color: #1B4F72;
+}
+
+
+.sidebar-nav-toggle--mobile{
+	background-color: #1B4F72;
+}
+.sidebar-nav-toggle--mobile:hover{
+	background-color: #1B4F72;
+}
+#icon-bars{
+	fill: #ffffff;
+}
+#icon-cross{
+	fill: #ffffff;
+}
+
+@media (max-width:720px){
+
+
+	/* Estilos página 404 */
+	#imagen_404{
+		width: 50% !important;
+		height: 20% !important;
+	}
+	.page404__header{
+		font-size: xx-large !important;
+	}
+	.page404__text{
+		font-size: medium !important;
+	}
+	a.button.page404__button{
+		font-size: small !important;
+	}
+	.page404__text-container{
+		text-align: none;
+		height: 40%;
+	}
+
+
+}
+@media(min-width:720px) and (max-width:2000px){
+
+
+	/* Estilos página 404 */
+	#imagen_404{
+		width: 50% !important;
+		height: 40% !important;
+	}
+	.page404__header{
+		font-size: 500% !important;
+	}
+	.page404__text{
+		font-size: 200% !important;
+	}
+	a.button.page404__button{
+		font-size: 150% !important;
+	}
+	.page404__text-container{
+		text-align: none;
+		height: 40%;
+	}
+
+}
+@media (min-width:1200px){
+
+
+	/* estilos para paneles personalizados */ 
+	thead.w-sr-only.titulos{
+		overflow: visible;
+		position: initial;
+	}
+	th.titulo-panel{
+		color: #1B4F72;
+		font-size: larger;
+		font-weight: bold !important;
+	}
+}
+@media (min-width:2000px){
+
+
+	/* Estilos página 404 */
+	#imagen_404{
+		width: 90% !important;
+		height: 60% !important;
+	}
+	.page404__header{
+		font-size: 800% !important;
+	}
+	.page404__text{
+		font-size: 450% !important;
+	}
+	a.button.page404__button{
+		font-size: 400% !important;
+	}
+	.page404__text-container{
+		text-align: none;
+		height: 40%;
+	}
+
+}

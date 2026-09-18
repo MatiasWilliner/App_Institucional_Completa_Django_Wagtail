@@ -1,0 +1,71 @@
+/* ------------------------------------- Proyecto Ejemplo CMS ------------------------------------- */
+
+
+
+
+/* Estilos de elementos generales */
+
+/*Colores*/
+.color_general {
+	background-color: #0D1B2A;
+}
+.color_general_v2{
+	background-color:#1B4F72
+}
+.color_nuestro_trabajo{
+	background-color: #3D7DBA
+}
+.color_novedades{
+	background-color:#2CA9A1;
+}
+.color_general_v3{
+	background-color:#F2F4F8;
+}
+.color_contacto{
+	background-color:#333333;
+}
+
+/* Fuentes */
+.titulo{
+	font-weight:bold;
+	font-family:'Roboto';
+	font-size: 40pt;
+}
+.subtitulosUno{
+	font-weight:600;
+	font-family:'Roboto';
+	font-size: 35pt;
+}
+.subtitulosDos{
+	font-weight:700;
+	font-family:'Roboto';
+	font-size: 25pt;
+}
+.cuerpo_texto{
+	font-family:'Roboto';
+	font-size: 25pt;
+}
+.menu_principal{
+	font-weight:700;
+	font-family:'Roboto';
+	font-size: 25pt;
+	text-transform: uppercase;
+}
+.menu_inferior{
+	font-weight:700;
+	font-family:'Roboto';
+	font-size: 25pt;
+}
+
+.login{
+	background-color:#1B4F72;
+}
+
+.sidebar{
+	background-color:#1B4F72 !important;
+}
+
+.w-h1{
+	color:#1B4F72;
+}
+

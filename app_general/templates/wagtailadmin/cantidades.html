@@ -1,0 +1,82 @@
+{% load static %}
+
+<section class="w-panel w-panel--dashboard" id="quantity-section" aria-labelledby="quantity-heading" data-panel>
+    
+    <div class="w-panel__header">
+        <a class="w-panel__anchor w-panel__anchor--prefix" href="#quantity-section" data-panel-anchor aria-labelledby="quantity-heading">
+            <svg class="icon icon-link w-panel__icon" aria-hidden="true"><use href="#icon-link"></use></svg>
+        </a>
+        <button class="w-panel__toggle" type="button" aria-label="Alternar sección" aria-describedby="quantity-section" data-panel-toggle aria-controls="quantity-content" aria-expanded="true">
+            <svg class="icon icon-placeholder w-panel__icon" aria-hidden="true"><use href="#icon-placeholder"></use></svg>
+        </button>
+            <h2 class="w-panel__heading "  id="quantity-section" data-panel-heading>
+                <span data-panel-heading-text>Cantidades cargadas</span>
+            </h2>
+        
+        <a class="w-panel__anchor w-panel__anchor--suffix" href="#quantity-section" aria-labelledby="quantity-heading">
+            <svg class="icon icon-link w-panel__icon" aria-hidden="true"><use href="#icon-link"></use></svg>
+        </a>
+        <div class="w-panel__divider"></div> 
+    </div>
+
+    
+    <div id="quantity-content" class="w-panel__content">
+        <div class="cards-panel">
+
+            <!-- Áreas -->
+            <div class="card-panel">
+                <div class="card-panel-image">
+                    <img src="{% static 'app_general/images/areas.webp' %}" alt="Áreas">
+                </div>
+                <div class="card-panel-content">
+                    <p class="texto-cantidades">Áreas</p>
+                </div>
+                <div class="cantidad-numero">
+                    <p class="texto-cantidades">{{areas}}</p>
+                </div>
+            </div>
+
+            <!-- Talleres -->
+            <div class="card-panel">
+                <div class="card-panel-image">
+                    <img src="{% static 'app_general/images/talleres.webp' %}" alt="Talleres">
+                </div>
+                <div class="card-panel-content">
+                    <p class="texto-cantidades">Talleres</p>
+                </div>
+                <div class="cantidad-numero">
+                    <p class="texto-cantidades">{{talleres}}</p>
+                </div>
+            </div>
+
+            <!-- Noticias -->
+            <div class="card-panel">
+                <div class="card-panel-image">
+                    <img src="{% static 'app_general/images/noticias.webp' %}" alt="Noticias">
+                </div>
+                <div class="card-panel-content">
+                    <p class="texto-cantidades">Noticias</p>
+                </div>
+                <div class="cantidad-numero">
+                    <p class="texto-cantidades">{{noticias}}</p>
+                </div>
+            </div>
+
+            <!-- Eventos -->
+            <div class="card-panel">
+                <div class="card-panel-image">
+                    <img src="{% static 'app_general/images/eventos.webp' %}" alt="Eventos">
+                </div>
+                <div class="card-panel-content">
+                    <p class="texto-cantidades">Eventos</p>
+                </div>
+                <div class="cantidad-numero">
+                    <p class="texto-cantidades">{{eventos}}</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+</section>
