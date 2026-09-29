@@ -102,6 +102,9 @@ p.card-text-areas{
 	width: 500px;
 	height: auto;
 }
+.compartir{
+	margin-top: -15%;
+}
 /* Estilos del carrousel */
 .carousel-control.left,.carousel-control.right {
 	background-image:none;

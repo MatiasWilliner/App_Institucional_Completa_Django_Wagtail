@@ -1,0 +1,11 @@
+{% load wagtailcore_tags wagtailimages_tags %}
+
+<meta property="og:title" content="{{ page.title }}">
+<meta property="og:description" content="{{ page.descripcion|striptags|truncatechars:200 }}">
+<meta property="og:url" content="{{ url_compartir }}">
+<meta property="og:type" content="{{type}}">
+
+{% if page.imagen %}
+    {% image page.imagen width-1200 as imagen_social %}
+    <meta property="og:image" content="{{ request.scheme }}://{{ request.get_host }}{{ imagen_social.url }}">
+{% endif %}

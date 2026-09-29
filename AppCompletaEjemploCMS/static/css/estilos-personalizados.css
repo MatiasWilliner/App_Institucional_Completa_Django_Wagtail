@@ -535,6 +535,18 @@ div.card-header-contacto {
     color: #ffffff;
     line-height: 2.5;
 }
+/* Estilos redes sociales */
+.compartir .bi{
+	font-size: medium;
+	color:#0D1B2A;
+}
+.compartir .bi:hover{
+	color:#1B4F72
+}
+.compartir{
+	text-align: right;
+	margin-right: 10%;
+}
 /* Estilos varios */
 .container_borde{
 	border:1px solid #000000;
@@ -1318,6 +1330,12 @@ label {
     }
 
 
+	/* Estilos redes sociales */
+
+	.compartir .bi{
+		font-size: large;
+	}
+
 }
 @media (min-width:768px) and (max-width:1023px) {
 
@@ -1377,6 +1395,12 @@ label {
 		font-family: "Roboto";
 	}
 
+
+	/* Estilos redes sociales */
+
+	.compartir .bi{
+		font-size: large;
+	}
 
 }
 @media (min-width:1024px) and (max-width:1200px) {
@@ -1494,6 +1518,13 @@ label {
     	color: #ffffff !important;
     	font-family: "Roboto";
     	margin-left: 15px;
+	}
+
+
+	/* Estilos redes sociales */
+
+	.compartir .bi{
+		font-size: x-large;
 	}
 
 
@@ -1623,6 +1654,13 @@ label {
 	}
 	.navbar-nav>li>a {
 		margin:0 5px;
+	}
+
+
+	/* Estilos redes sociales */
+
+	.compartir .bi{
+		font-size: x-large;
 	}
 
 
@@ -1776,6 +1814,13 @@ label {
     	color: #ffffff !important;
     	font-family: "Roboto";
     	margin-left: 15px;
+	}
+
+
+	/* Estilos redes sociales */
+
+	.compartir .bi{
+		font-size: 50px;
 	}
 	
 

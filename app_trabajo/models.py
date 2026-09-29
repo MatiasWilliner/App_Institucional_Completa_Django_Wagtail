@@ -65,6 +65,12 @@ class TallerPage(Page):
     ]
     # Tipos de página padre permitidos para las páginas de los talleres
     parent_page_types = ["app_trabajo.TalleresIndexPage"]
+    # Contexto para etiquetas de redes sociales
+    def get_context(self, request):
+        context = super().get_context(request)
+        context["url_compartir"] = request.build_absolute_uri(self.url)
+        context["type"]="Taller"
+        return context
 
 # Modelo Imagen extra del taller
 class ImagenExtra(models.Model):

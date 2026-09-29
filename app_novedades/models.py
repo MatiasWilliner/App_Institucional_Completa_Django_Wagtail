@@ -142,6 +142,13 @@ class NoticiaPage(Page):
     # Tipos de página padre permitidos para las página de las noticias
     parent_page_types = ["app_novedades.NoticiasIndexPage"]
 
+    # Contexto para etiquetas de redes sociales
+    def get_context(self, request):
+        context = super().get_context(request)
+        context["url_compartir"] = request.build_absolute_uri(self.url)
+        context["type"]="Noticia"
+        return context
+
 # Modelo de categoría de eventos que es un snippet registrado en Wagtail
 @register_snippet
 class CategoriaEvento(models.Model):
@@ -217,9 +224,8 @@ class EventosIndexPage(Page):
         page_number = request.GET.get("page")
 
         context["eventos"] = paginator.get_page(page_number)
-
         context["categorias"] = CategoriaEvento.objects.all()
-        
+
         return context
     
 # Modelo de los eventos que hereda de la clase Page de Wagtail   
