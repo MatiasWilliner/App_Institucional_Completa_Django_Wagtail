@@ -3,3 +3,8 @@ wagtail==7.4
 mysqlclient==2.2.7
 Pillow==11.2.1
 python-decouple==3.8
+pytest==8.4.1
+pytest-cov==6.2.1
+pytest-django==4.11.1
+pytest-subtests==0.14.2
+factory_boy==3.3.3

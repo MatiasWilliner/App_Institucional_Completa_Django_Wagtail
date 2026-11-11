@@ -1,7 +1,8 @@
-from datetime import date
+from datetime import date, datetime, time, timezone
 
 from django.db import models
 from django.core.paginator import Paginator
+from django.utils import timezone
 
 from urllib3 import request
 from wagtail.snippets.models import register_snippet
@@ -66,7 +67,7 @@ class NoticiasIndexPage(Page):
             .child_of(self)
             .live()
             .specific()
-            .order_by("-first_published_at")
+            .order_by("-first_published_at","-id")
         )
 
         # Las 3 noticias destacadas
@@ -91,11 +92,25 @@ class NoticiasIndexPage(Page):
         # Filtro rango de fechas
         fecha_desde = request.GET.get("fecha_desde")
         fecha_hasta = request.GET.get("fecha_hasta")
+        # Si se especifica fecha_desde, se hace aware y se le asigna la hora mínima del día para que incluya todas las noticias de ese día
         if fecha_desde:
+            fecha_desde = timezone.make_aware(
+                datetime.combine(
+                    date.fromisoformat(fecha_desde),
+                    time.min
+                )
+            )
             noticias_restantes = noticias_restantes.filter(
                 first_published_at__gte=fecha_desde
             )
+        # Si se especifica fecha_hasta, se hace aware y se le asigna la hora máxima del día para que incluya todas las noticias de ese día
         if fecha_hasta:
+            fecha_hasta = timezone.make_aware(
+                datetime.combine(
+                    date.fromisoformat(fecha_hasta),
+                    time.max
+                )
+            )
             noticias_restantes = noticias_restantes.filter(
                 first_published_at__lte=fecha_hasta
             )
@@ -196,7 +211,7 @@ class EventosIndexPage(Page):
             .child_of(self)
             .live()
             .specific()
-            .order_by("-first_published_at")
+            .order_by("-fecha","-id")
         )
 
         # Filtro por categoría
@@ -220,7 +235,7 @@ class EventosIndexPage(Page):
             )
 
         # Paginación solamente para las restantes
-        paginator = Paginator(eventos, 1)
+        paginator = Paginator(eventos, 3)
         page_number = request.GET.get("page")
 
         context["eventos"] = paginator.get_page(page_number)

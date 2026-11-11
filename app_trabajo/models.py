@@ -28,11 +28,11 @@ class TalleresIndexPage(Page):
             .child_of(self)
             .live()
             .specific()
-            .order_by("-first_published_at")
+            .order_by("-first_published_at","-id")
         )
 
         # Paginación para todos los talleres
-        paginator = Paginator(talleres, 1)
+        paginator = Paginator(talleres, 3)
         page_number = request.GET.get("page")
 
         # Se pasan los talleres con la paginación en el contexto
@@ -109,11 +109,11 @@ class AreasIndexPage(Page):
             .child_of(self)
             .live()
             .specific()
-            .order_by("-first_published_at")
+            .order_by("-first_published_at","-id")
         )
 
         # Paginación para todas las áreas
-        paginator = Paginator(areas, 1)
+        paginator = Paginator(areas, 3)
         page_number = request.GET.get("page")
 
         # Se pasan las áreas con la paginación en el contexto

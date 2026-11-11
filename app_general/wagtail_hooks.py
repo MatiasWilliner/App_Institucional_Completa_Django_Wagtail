@@ -43,9 +43,6 @@ class ShortcutPanel(Component):
 class QuantityPanel(Component):
     order = 60
 
-    def __init__(self, request):
-        self.request = request
-
     def render_html(self, parent_context):
 
         context = {
@@ -58,11 +55,11 @@ class QuantityPanel(Component):
         return render_to_string(
             "wagtailadmin/cantidades.html",
             context,
-            request=self.request,
+            request=parent_context["request"],
         )
 
 # Hook para agregar paneles personalizados
 @hooks.register("construct_homepage_panels")
 def agregar_paneles_personalizados(request, panels):
     panels.append(ShortcutPanel())
-    panels.append(QuantityPanel(request))
+    panels.append(QuantityPanel())
